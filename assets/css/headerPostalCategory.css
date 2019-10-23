@@ -1,0 +1,30 @@
+.chapternav-category{
+  background: rgba(242,242,242,0.7);
+  overflow: hidden;
+  padding: 0;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  position: relative;
+  text-align: center;
+  width: 100%;
+  height: 45px;
+  z-index: 9987;
+  position: relative;
+}
+
+.chapternav-items{
+    list-style: none;
+    margin: 0 34px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 50px;
+    white-space: nowrap;
+}
+
+.chapternav-item{
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 -.11765em;
+    padding: 0 20px;
+}
