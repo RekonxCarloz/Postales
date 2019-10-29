@@ -22,13 +22,28 @@
             <div class="container">
                 <div class="block-heading">
                     <h2 class="text-info">Registro</h2>
-                    <p>Registrate con tu nombre completo y un correo electrónico.&nbsp;</p>
+                    <p>Registrate con tu nombre completo y un correo electr&oacute;nico.&nbsp;</p>
                 </div>
-                <form>
-                    <div class="form-group"><label for="name">Nombre completo</label><input class="form-control item" type="text" id="name"></div>
-                    <div class="form-group"><label for="password">Contraseña</label><input class="form-control item" type="password" id="password"></div>
-                    <div class "form-group"><label for="password2">Repite tu contraseña</label><input class="form-control item" type="password" id="password2"></div>
-                    <div class="form-group"><label for="email">Email</label><input class="form-control item" type="email" id="email"></div>
+                <form id="formRegistro">
+                    <div class="form-group"><label for="name">Nombre completo</label><input class="form-control item" type="text" id="name" name="name"></div>
+                    <div class="form-group"><label for="password">Contrase&ntilde;a</label><input class="form-control item" type="password" id="password" name="password"></div>
+                    <div class="form-group"><label for="password2">Repite tu contrase&ntilde;a</label><input class="form-control item" type="password" id="password2" name="password2"></div>
+                    <div class="form-group"><label for="email">Email</label><input class="form-control item" type="email" placeholder="ejemplo@dominio.com" id="email" name="email"></div>
+                    <div class="form-group"><label for="mobile">M&oacute;vil</label><input class="form-control item" type="tel" id="mobile" name="mobile"></div>
+                    <div class="form-group"><label for="gender">Sexo:</label></div>
+                    <div class="form-group form-check">
+                        <input class="form-check-input" type="radio" id="gender" name="gender" value="m" checked>
+                        <label class="form-check-label" for="gender">
+                            Masculino
+                        </label>    
+                    </div>
+                    <div class="form-group form-check">
+                        <input class="form-check-input" type="radio" id="gender2" name="gender" value="f">
+                        <label class="form-check-label" for="gender2">
+                            Femenino
+                        </label>
+                    </div>
+                    <div class="form-group"><label for="date">Fecha de Nacimiento</label><input class="form-control item" type="date" id="date" name="date"></div>
                     <button class="btn btn-primary btn-block" type="submit">Registrarme</button>
                 </form>
             </div>
