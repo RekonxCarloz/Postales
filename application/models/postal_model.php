@@ -6,14 +6,15 @@
             $this->load->database();
         }
 
-        function registrarUsuario($data) {
+        public function registrarUsuario($data) {
             $this->db->insert('usuario',array(
                 'nombre' => $data['nombre'],
                 'contrasena' => md5($data['contrasena']),
                 'email' => $data['email'],
                 'celular' => $data['celular'],
                 'genero' => $data['genero'],
-                'fechaNac' => $data['fecha']
+                'fechaNac' => $data['fecha'],
+                'privilegio' => $data['privilegio']=0
             ));
         }
     }

@@ -5,7 +5,7 @@ class Procesamiento extends CI_Controller {
         parent::__construct();
         $this->load->model('postal_model');
     }
-    function registroAjax() {
+    public function registroAjax() {
         $respAX = array();
         $data = array(
             'nombre' => trim($_POST["name"]),
@@ -25,5 +25,5 @@ class Procesamiento extends CI_Controller {
             $respAX["msj"] = "<h5 class='text-info'>Registro fallido</h5>";
         }
         echo json_encode($respAX);
-    }   
+    }
 }
