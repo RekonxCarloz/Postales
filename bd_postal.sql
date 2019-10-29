@@ -1,39 +1,18 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 28-10-2019 a las 07:01:57
--- Versión del servidor: 10.4.8-MariaDB
--- Versión de PHP: 7.3.10
+-- Servidor: localhost:8889
+-- Tiempo de generación: 29-10-2019 a las 16:44:08
+-- Versión del servidor: 5.7.26
+-- Versión de PHP: 7.3.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Base de datos: `bd_postal`
 --
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `administrador`
---
-
-CREATE TABLE `administrador` (
-  `idAdministrador` int(11) NOT NULL,
-  `nombre` varchar(32) NOT NULL,
-  `contrasena` varchar(32) NOT NULL,
-  `email` varchar(32) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -43,7 +22,7 @@ CREATE TABLE `administrador` (
 
 CREATE TABLE `adminreporte` (
   `idReporte` int(11) NOT NULL,
-  `idAdministrador` int(11) NOT NULL
+  `idUsuario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -117,24 +96,26 @@ CREATE TABLE `usuario` (
   `email` varchar(32) NOT NULL,
   `celular` varchar(10) NOT NULL,
   `genero` char(1) NOT NULL,
-  `fechaNac` date NOT NULL
+  `fechaNac` date NOT NULL,
+  `privilegio` int(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `usuario`
+--
+
+INSERT INTO `usuario` (`idUsuario`, `nombre`, `contrasena`, `email`, `celular`, `genero`, `fechaNac`, `privilegio`) VALUES
+(1, 'admin', 'admin', 'RRekon@hotmail.com', '5579101570', 'M', '1998-04-24', 1);
 
 --
 -- Índices para tablas volcadas
 --
 
 --
--- Indices de la tabla `administrador`
---
-ALTER TABLE `administrador`
-  ADD PRIMARY KEY (`idAdministrador`);
-
---
 -- Indices de la tabla `adminreporte`
 --
 ALTER TABLE `adminreporte`
-  ADD KEY `idAdministrador` (`idAdministrador`),
+  ADD KEY `idUsuario` (`idUsuario`),
   ADD KEY `idReporte` (`idReporte`);
 
 --
@@ -174,12 +155,6 @@ ALTER TABLE `usuario`
 --
 
 --
--- AUTO_INCREMENT de la tabla `administrador`
---
-ALTER TABLE `administrador`
-  MODIFY `idAdministrador` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT de la tabla `categoria`
 --
 ALTER TABLE `categoria`
@@ -201,7 +176,7 @@ ALTER TABLE `reporte`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Restricciones para tablas volcadas
@@ -211,8 +186,8 @@ ALTER TABLE `usuario`
 -- Filtros para la tabla `adminreporte`
 --
 ALTER TABLE `adminreporte`
-  ADD CONSTRAINT `adminreporte_ibfk_1` FOREIGN KEY (`idAdministrador`) REFERENCES `administrador` (`idAdministrador`),
-  ADD CONSTRAINT `adminreporte_ibfk_2` FOREIGN KEY (`idReporte`) REFERENCES `reporte` (`idReporte`);
+  ADD CONSTRAINT `adminreporte_ibfk_1` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`idUsuario`) ON DELETE CASCADE,
+  ADD CONSTRAINT `adminreporte_ibfk_2` FOREIGN KEY (`idReporte`) REFERENCES `reporte` (`idReporte`) ON DELETE CASCADE;
 
 --
 -- Filtros para la tabla `categoriapostal`
@@ -226,8 +201,3 @@ ALTER TABLE `categoriapostal`
 --
 ALTER TABLE `postal`
   ADD CONSTRAINT `postal_ibfk_1` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`idUsuario`);
-COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
