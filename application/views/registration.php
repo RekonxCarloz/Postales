@@ -25,11 +25,11 @@
                     <p>Registrate con tu nombre completo y un correo electr&oacute;nico.&nbsp;</p>
                 </div>
                 <form id="formRegistro">
-                    <div class="form-group"><label for="name">Nombre completo</label><input class="form-control item" type="text" id="name" name="name"></div>
-                    <div class="form-group"><label for="password">Contrase&ntilde;a</label><input class="form-control item" type="password" id="password" name="password"></div>
-                    <div class="form-group"><label for="password2">Repite tu contrase&ntilde;a</label><input class="form-control item" type="password" id="password2" name="password2"></div>
-                    <div class="form-group"><label for="email">Email</label><input class="form-control item" type="email" placeholder="ejemplo@dominio.com" id="email" name="email"></div>
-                    <div class="form-group"><label for="mobile">M&oacute;vil</label><input class="form-control item" type="tel" id="mobile" name="mobile"></div>
+                    <div class="form-group"><label for="name">Nombre completo</label><input class="form-control item" type="text" id="name" name="name" data-validetta="required,maxLength[64]"></div>
+                    <div class="form-group"><label for="password">Contrase&ntilde;a</label><input class="form-control item" type="password" id="password" name="password" data-validetta="required,minLength[6],maxLength[32]"></div>
+                    <div class="form-group"><label for="password2">Repite tu contrase&ntilde;a</label><input class="form-control item" type="password" id="password2" name="password2" data-validetta="required,minLength[6],maxLength[32],equalTo[password]"></div>
+                    <div class="form-group"><label for="email">Email</label><input class="form-control item" type="email" placeholder="ejemplo@dominio.com" id="email" name="email" data-validetta="required,email,maxLength[32]"></div>
+                    <div class="form-group"><label for="mobile">M&oacute;vil</label><input class="form-control item" type="tel" id="mobile" name="mobile" data-validetta="required,number,minLength[10],maxLength[10]"></div>
                     <div class="form-group"><label for="gender">Sexo:</label></div>
                     <div class="form-group form-check">
                         <input class="form-check-input" type="radio" id="gender" name="gender" value="m" checked>
@@ -43,7 +43,7 @@
                             Femenino
                         </label>
                     </div>
-                    <div class="form-group"><label for="date">Fecha de Nacimiento</label><input class="form-control item" type="date" id="date" name="date"></div>
+                    <div class="form-group"><label for="date">Fecha de Nacimiento</label><input class="form-control item" type="date" id="date" name="date" data-validetta="required"></div>
                     <button class="btn btn-primary btn-block" type="submit">Registrarme</button>
                 </form>
             </div>

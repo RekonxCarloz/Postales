@@ -20,7 +20,7 @@ class Inicio extends CI_Controller {
      $this->load->view('footer');
    }
    public function registro(){
-     $this->load->view('header');
+     $this->load->view('headerRegistro');
      $this->load->view('registration');
      $this->load->view('footer');
    }
