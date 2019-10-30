@@ -39,5 +39,10 @@ class Inicio extends CI_Controller {
      $this->load->view('categoriaPostales');
      $this->load->view('footer');
    }
+   public function enviarPostales(){
+    $this->load->view('header');
+    $this->load->view('enviarPostales');
+    $this->load->view('footer');
+  }
 }
 ?>

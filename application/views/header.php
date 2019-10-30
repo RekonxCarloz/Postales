@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="<?php base_url(); ?>assets/css/validetta/validetta.min.css">
   <link rel="stylesheet" href="<?php base_url(); ?>assets/css/smoothproducts.css">
   <link rel="stylesheet" href="<?php base_url(); ?>assets/css/headerPostalCategory.css">
-  <link rel="stylesheet" href="<?php base_url(); ?>assets/confirm/dist/jquery-confirm.min.css">
+  <link rel="stylesheet" href="<?php base_url(); ?>assets/fontawesome/css/all.css">
 
     <script src="<?php base_url(); ?>assets/js/jquery.min.js"></script>
     <script src="<?php base_url(); ?>assets/bootstrap/js/bootstrap.min.js"></script>
@@ -23,5 +23,6 @@
     <script src="<?php base_url(); ?>assets/js/smoothproducts.min.js"></script>
     <script src="<?php base_url(); ?>assets/js/theme.js"></script>
     <script src="<?php base_url(); ?>assets/confirm/dist/jquery-confirm.min.js"></script>
+    <script src="<?php base_url(); ?>assets/fontawesome/js/all.css"></script>
 
 </head>
