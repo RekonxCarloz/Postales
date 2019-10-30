@@ -7,15 +7,23 @@
         }
 
         public function registrarUsuario($data) {
-            $this->db->insert('usuario',array(
-                'nombre' => $data['nombre'],
-                'contrasena' => md5($data['contrasena']),
-                'email' => $data['email'],
-                'celular' => $data['celular'],
-                'genero' => $data['genero'],
-                'fechaNac' => $data['fecha'],
-                'privilegio' => $data['privilegio']=0
-            ));
+            $sql = "SELECT * FROM usuario WHERE email = ?";
+            $this->db->query($sql,$data['email']);
+            if($this->db->affected_rows() == 1) {
+                return FALSE;
+            } else {
+
+                $this->db->insert('usuario',array(
+                        'nombre' => $data['nombre'],
+                        'contrasena' => md5($data['contrasena']),
+                        'email' => $data['email'],
+                        'celular' => $data['celular'],
+                        'genero' => $data['genero'],
+                        'fechaNac' => $data['fecha'],
+                        'privilegio' => 0
+                ));
+                return TRUE;
+            }
         }
     }
 ?>

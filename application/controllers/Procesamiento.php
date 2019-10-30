@@ -15,14 +15,13 @@ class Procesamiento extends CI_Controller {
             'genero' => trim($_POST["gender"]),
             'fecha' => trim($_POST["date"])
         );
-        $this->postal_model->registrarUsuario($data);
-        $result = $this->db->affected_rows();
-        if ($result == 1) {
+        $er = $this->postal_model->registrarUsuario($data);
+        if ($er) {
             $respAX["val"] = 1;
             $respAX["msj"] = "<h5 class='text-info'>¡Registro Exitoso!</h5>";
         } else {
             $respAX["val"] = 0;
-            $respAX["msj"] = "<h5 class='text-info'>Registro fallido</h5>";
+            $respAX["msj"] = "<h5 class='text-info'>Registro fallido, ya existe ese email</h5>";
         }
         echo json_encode($respAX);
     }
