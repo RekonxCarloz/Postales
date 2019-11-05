@@ -14,6 +14,8 @@
   <link rel="stylesheet" href="<?php base_url(); ?>assets/css/smoothproducts.css">
   <link rel="stylesheet" href="<?php base_url(); ?>assets/css/headerPostalCategory.css">
   <link rel="stylesheet" href="<?php base_url(); ?>assets/fontawesome/css/all.css">
+  <link rel="stylesheet" href="<?php base_url(); ?>assets/css/enviarPostalCSS.css">
+
 
     <script src="<?php base_url(); ?>assets/js/jquery.min.js"></script>
     <script src="<?php base_url(); ?>assets/bootstrap/js/bootstrap.min.js"></script>
