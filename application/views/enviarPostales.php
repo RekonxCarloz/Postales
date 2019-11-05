@@ -25,19 +25,23 @@
                     <h2 class="text-info">Postales</h2>
                 </div>
                 
-                <div class="row">
+                
                 <form action="" method= "POST">
-                    <div class="col-md-6 col-lg-4 item">
-                    <i class="fab fa-whatsapp fa-5x green-text"></i> Número de WhatsApp: <input id="whats" name="whats" type="number">
+                    <div align="center" class="row">
+                    <div  class="col-md-4 col-lg-6 item">
+                    <i id="iconoW" class="fab fa-whatsapp fa-5x green-text"></i> Número de WhatsApp: <input id="whats" name="whats" type="number">
                     </div>
-                    <div class="col-md-6 col-lg-4 item">
-                    <i class="fas fa-envelope-square fa-5x red-text"></i> Mail: <input id="mensaje" name="correo" type="text">
+                    <div class="col-md-4 col-lg-6 item">
+                    <i id="iconoM" class="fas fa-envelope-square fa-5x red-text"></i> Mail: <input id="mensaje" name="correo" type="text">
                     </div>
-                    <div class="col-sm">
-                   <button  class="btn btn-primary" type="submit">Enviar</button>
+</div>
+<div class="row">
+<div class="col-sm" align="center" id="btnenv">
+                   <button id="env" class="btn btn-primary" type="submit">Enviar</button>
                     </div>
+</div>
                 </form>
-                </div>
+                
                 <div class="row">
                     <div class="col-sm">
                     <br>
