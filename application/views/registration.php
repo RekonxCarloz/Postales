@@ -66,11 +66,16 @@
                         var tipoAlerts = new Array("red","green");
                         var AX = JSON.parse(respAX);
                         $.alert({
-                            title:"<h4 class='text-info'>Estado del registro:</h4>",
+                            title:AX.title,
+                            icon: AX.icon,
                             content:AX.msj,
                             type:tipoAlerts[AX.val],
                             onDestroy:function(){
-                                window.location.replace("index.php");
+                                if (AX.val == 1) {
+                                    window.location.replace("index.php");
+                                } else {
+                                    $('#formRegistro')[0].reset();
+                                }
                             }
                         });
                     }

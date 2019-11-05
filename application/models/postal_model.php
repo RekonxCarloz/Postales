@@ -22,7 +22,11 @@
                         'fechaNac' => $data['fecha'],
                         'privilegio' => 0
                 ));
-                return TRUE;
+                if ($this->db->affected_rows() == 1) {
+                    return TRUE;
+                } else {
+                    return FALSE;
+                }
             }
         }
     }
