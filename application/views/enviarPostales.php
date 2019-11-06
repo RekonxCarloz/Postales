@@ -54,7 +54,54 @@
         </section>
     </main>
     <?php
+    use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\Exception;
+    
 if($_POST  ){
+    
+    
+    
+    require 'PHPMailer/Exception.php';
+    require 'PHPMailer/PHPMailer.php';
+    require 'PHPMailer/SMTP.php';
+
+    $mail = new PHPMailer(true);
+
+    try {
+        //Server settings
+        $mail->SMTPDebug = 0;                      // Enable verbose debug output
+        $mail->isSMTP();                                            // Send using SMTP
+        $mail->Host       = 'smtp.gmail.com';                    // Set the SMTP server to send through
+        $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
+        $mail->Username   = 'omar1cruz2714721@gmail.com';                     // SMTP username
+        $mail->Password   = 'fakiebigflip123';                               // SMTP password
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
+        $mail->Port       = 587;                                    // TCP port to connect to
+    
+        //Recipients
+        $mail->setFrom('omar1cruz2714721@gmail.com', 'OmarCruz271');
+        $mail->addAddress($_POST["correo"], 'Joe User');     // Add a recipient
+        /*$mail->addAddress('ellen@example.com');               // Name is optional
+        $mail->addReplyTo('info@example.com', 'Information');
+        $mail->addCC('cc@example.com');
+        $mail->addBCC('bcc@example.com');
+    
+        // Attachments
+        $mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
+        $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
+    */
+        // Content
+        $mail->isHTML(true);                                  // Set email format to HTML
+        $mail->Subject = 'Esta es una Postal de iPostal';
+        $mail->Body    = 'Esta es una postal <b>FELICIDADES ESTA ES TU POSTAL</b>';
+      //  $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+    
+        $mail->send();
+        echo 'Message has been sent';
+    } catch (Exception $e) {
+        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+    }
+
 $data = [
 
     'phone' => '52'.$_POST["whats"], // Receivers phone
@@ -62,7 +109,7 @@ $data = [
 ];
 $json = json_encode($data); // Encode data to JSON
 // URL for request POST /message
-$url = 'https://eu56.chat-api.com/instance76099/sendMessage?token=60n8fbjuhdu0n8oa';
+$url = 'https://eu23.chat-api.com/instance77537/sendMessage?token=ubnxw573jbpbun87';
 // Make a POST request
 $options = stream_context_create(['http' => [
         'method'  => 'POST',
