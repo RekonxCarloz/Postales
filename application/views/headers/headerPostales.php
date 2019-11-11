@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="<?php base_url(); ?>assets/fontawesome/css/all.css">
   <link rel="stylesheet" href="<?php base_url(); ?>assets/confirm/dist/jquery-confirm.min.css">
   <link rel="stylesheet" href="<?php base_url(); ?>assets/css/enviarPostalCSS.css">
+  <link rel="stylesheet" href="<?php base_url(); ?>assets/css/simplemde.min.css">
 
 
     <script src="<?php base_url(); ?>assets/js/jquery.min.js"></script>
@@ -27,6 +28,9 @@
     <script src="<?php base_url(); ?>assets/js/theme.js"></script>
     <script src="<?php base_url(); ?>assets/confirm/dist/jquery-confirm.min.js"></script>
     <script src="<?php base_url(); ?>assets/fontawesome/js/all.min.js"></script>
+    <script src="<?php base_url(); ?>assets/js/gulpfile.js"></script>
+    <script src="<?php base_url(); ?>assets/js/simplemde.js"></script>
+    <script src="<?php base_url(); ?>assets/js/tablist.js"></script>
 
 </head>
 <body>

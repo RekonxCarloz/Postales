@@ -1,46 +1,60 @@
-¡
-    <main class="page gallery-page">
-        <section class="clean-block clean-gallery dark">
-            <div class="container">
-                <div class="block-heading" style="padding-top: 140px;">
-                    <h2 class="text-info">Postales</h2>
-                </div>
+<main class="page gallery-page">
+    <section class="clean-block clean-gallery dark">
+        <div class="container">
+            <div class="block-heading" style="padding-top: 140px;">
+                <h2 class="text-info">¡Redacta tu mensaje!</h2>
+            </div>
 
+            <textarea id="mensajePostal" name="mensajePostal" rows="8" class="col-sm"></textarea>
 
-                <form action="" method= "POST">
-                    <div align="center" class="row">
-                    <div  class="col-md-4 col-lg-6 item">
-                    <i id="iconoW" class="fab fa-whatsapp fa-5x green-text"></i> Número de WhatsApp: <input id="whats" name="whats" type="number">
-                    </div>
-                    <div class="col-md-4 col-lg-6 item">
-                    <i id="iconoM" class="fas fa-envelope-square fa-5x red-text"></i> Mail: <input id="mensaje" name="correo" type="text">
-                    </div>
-</div>
-<div class="row">
-<div class="col-sm" align="center" id="btnenv">
-                   <button id="env" class="btn btn-primary" type="submit">Enviar</button>
-                    </div>
-</div>
-                </form>
-
-                <div class="row">
-                    <div class="col-sm">
+            <div class="row">
+                <div class="col-sm">
                     <br>
-                    <img  class="img-thumbnail img-fluid image" id="img1" src="assets/img/postales/amor-amistad/image1.jpg"  >
-
-                    </a></div>
-
+                    <img class="img-thumbnail img-fluid image" id="img1" src="assets/img/postales/amor/image1.png">
                 </div>
             </div>
-        </section>
-    </main>
-    <?php
+            <br>
+
+            <form action="" method="POST">
+                <div align="center" class="row">
+                    <div class="col-md-4 col-lg-6 item">
+                        <i id="iconoW" class="fab fa-whatsapp fa-5x green-text"></i> Número de WhatsApp:
+                        <input id="whats" name="whats" type="number">
+                    </div>
+                    <div class="col-md-4 col-lg-6 item">
+                        <i id="iconoM" class="fas fa-envelope-square fa-5x red-text"></i> Mail:
+                        <input id="mensaje" name="correo" type="text">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm" align="center" id="btnenv">
+                        <button id="env" class="btn btn-primary" type="submit">Enviar</button>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </section>
+</main>
+
+<script>
+
+  var simplemde = new SimpleMDE({
+    element: document.getElementById("mensajePostal"),
+    autosave: {
+  		enabled: true,
+  		uniqueId: "MyUniqueID",
+  		delay: 50,
+  	}
+  });
+
+</script>
+
+<?php
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\Exception;
 
 if($_POST  ){
-
-
 
     require 'PHPMailer/Exception.php';
     require 'PHPMailer/PHPMailer.php';
@@ -100,7 +114,6 @@ $options = stream_context_create(['http' => [
     ]
 ]);
 $result = file_get_contents($url, false, $options);
-
 
 }
 ?>
