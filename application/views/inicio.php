@@ -1,42 +1,23 @@
 
-<body>
-  <div class="fixed-top">
-    <nav class="navbar navbar-light navbar-expand-lg bg-white clean-navbar">
-        <div class="container"><a class="navbar-brand logo" href="index.php">iPostal</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse"
-                id="navcol-1">
-                <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="<?php base_url(); ?>inicio">Inicio</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="<?php base_url(); ?>caracteristicas">Características</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="<?php base_url(); ?>postales">Postales</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="<?php base_url(); ?>about">Acerca de</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="<?php base_url(); ?>contacto">Contáctanos</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="<?php base_url(); ?>login">Login</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="<?php base_url(); ?>registro">Registrarme</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-  </div>
 <main class="page landing-page">
     <section class="clean-block clean-hero" style="background-image:url(&quot;assets/img/tech/image4.jpg&quot;);color:rgba(236, 255, 216,.6);">
         <div class="text">
-            <h2>Lorem ipsum dolor sit amet.</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo.</p><button class="btn btn-outline-light btn-lg" type="button" href="login.html">Empieza ahora</button></div>
+            <h2>Bienvenido a iPostal.</h2>
+            <p>Mandar postales a tus conocidos, nunca fue tan fácil. Únete al equipo de iPostal y comienza a crear tus propias postales.</p><a class="btn-light btn-lg" href="<?php base_url(); ?>registro">Registrarme</a></div>
     </section>
     <section class="clean-block clean-info dark">
         <div class="container">
             <div class="block-heading">
-                <h2 class="text-info">Info</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo.</p>
+                <h2 class="text-info">¿Ya tienes cuenta?</h2>
+                <p>Inicia sesión para gozar de todos los beneficios que te ofrece iPostal.</p>
             </div>
             <div class="row align-items-center">
-                <div class="col-md-6"><img class="img-thumbnail" src="assets/img/scenery/image5.jpg"></div>
+                <div class="col-md-6"><img class="img-thumbnail" src="assets/img/scenery/login.png"></div>
                 <div class="col-md-6">
                     <h3>Lorem impsum dolor sit amet</h3>
                     <div class="getting-started-info">
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                    </div><button class="btn btn-outline-primary btn-lg" type="button">Join Now</button></div>
+                    </div><a class="btn btn-outline-primary btn-lg" href="<?php base_url(); ?>login">Iniciar sesi&oacute;n</a></div>
             </div>
         </div>
     </section>
@@ -74,9 +55,10 @@
             </div>
             <div class="carousel slide" data-ride="carousel" id="carousel-1">
                 <div class="carousel-inner" role="listbox">
-                    <div class="carousel-item active"><img class="w-100 d-block" src="assets/img/scenery/image1.jpg" alt="Slide Image"></div>
-                    <div class="carousel-item"><img class="w-100 d-block" src="assets/img/scenery/image4.jpg" alt="Slide Image"></div>
-                    <div class="carousel-item"><img class="w-100 d-block" src="assets/img/scenery/image6.jpg" alt="Slide Image"></div>
+                    <div class="carousel-item active"><img class="w-100 d-block" src="assets/img/scenery/image1-scroll.jpg" alt="Slide Image"></div>
+                    <div class="carousel-item"><img class="w-100 d-block" src="assets/img/scenery/image4-scroll.jpg" alt="Slide Image"></div>
+                    <div class="carousel-item"><img class="w-100 d-block" src="assets/img/scenery/image2-scroll.jpg" alt="Slide Image"></div>
+                    <div class="carousel-item"><img class="w-100 d-block" src="assets/img/scenery/image3-scroll.jpg" alt="Slide Image"></div>
                 </div>
                 <div><a class="carousel-control-prev" href="#carousel-1" role="button" data-slide="prev"><span class="carousel-control-prev-icon"></span><span class="sr-only">Previous</span></a><a class="carousel-control-next" href="#carousel-1" role="button"
                         data-slide="next"><span class="carousel-control-next-icon"></span><span class="sr-only">Next</span></a></div>
@@ -84,6 +66,7 @@
                     <li data-target="#carousel-1" data-slide-to="0" class="active"></li>
                     <li data-target="#carousel-1" data-slide-to="1"></li>
                     <li data-target="#carousel-1" data-slide-to="2"></li>
+                    <li data-target="#carousel-1" data-slide-to="3"></li>
                 </ol>
             </div>
         </div>
@@ -98,7 +81,7 @@
                 <div class="col-sm-6 col-lg-4">
                     <div class="card clean-card text-center">
                         <div class="card-body info">
-                            <h4 class="card-title">Carlos Cobián</h4>
+                            <h4 class="card-title">Carlos Cobi&aacute;n</h4>
                             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                             <div class="icons"><a href="#"><i class="icon-social-facebook"></i></a><a href="#"><i class="icon-social-instagram"></i></a><a href="#"><i class="icon-social-twitter"></i></a></div>
                         </div>
@@ -116,7 +99,7 @@
                 <div class="col-sm-6 col-lg-4">
                     <div class="card clean-card text-center">
                         <div class="card-body info">
-                            <h4 class="card-title">Rodrigo</h4>
+                            <h4 class="card-title">Rodrigo Garc&iacute;a</h4>
                             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                             <div class="icons"><a href="#"><i class="icon-social-facebook"></i></a><a href="#"><i class="icon-social-instagram"></i></a><a href="#"><i class="icon-social-twitter"></i></a></div>
                         </div>

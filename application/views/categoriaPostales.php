@@ -1,69 +1,73 @@
+<main class="page gallery-page">
+    <section class="clean-block clean-gallery dark">
+        <div class="container">
+            <div class="block-heading" style="padding-top: 140px;">
+                <h2 class="text-info">Postales</h2>
+                <p>Elige la postal que más te agrade. Exiten diferentes categorías que se acomodan a lo que necesitas.&nbsp;</p>
+            </div>
+            <div class="row" id="images">
+              <div class="col-md-6 col-lg-4 item"><a class="filterDiv lightbox amistad" href="<?php base_url(); ?>enviarPostales"><img  class="img-thumbnail img-fluid image" id="img1" src="assets/img/postales/amistad/image1.png"></a></div>
+              <div class="col-md-6 col-lg-4 item"><a class="filterDiv lightbox amor" href="assets/img/postales/amor-amistad/image2.jpg"><img class="img-thumbnail img-fluid image" src="assets/img/postales/amor/image1.png"></a></div>
+              <div class="col-md-6 col-lg-4 item"><a class="filterDiv lightbox cumpleanos" href="assets/img/scenery/image6.jpg"><img class="img-thumbnail img-fluid image" src="assets/img/postales/cumpleanos/image1.png"></a></div>
+              <div class="col-md-6 col-lg-4 item"><a class="filterDiv lightbox invitacion" href="assets/img/scenery/image5.jpg"><img class="img-thumbnail img-fluid image" src="assets/img/postales/invitacion/image1.png"></a></div>
+              <div class="col-md-6 col-lg-4 item"><a class="filterDiv lightbox saludos" href="assets/img/scenery/image1.jpg"><img class="img-thumbnail img-fluid image" src="assets/img/postales/saludos/image1.png"></a></div>
+              <div class="col-md-6 col-lg-4 item"><a class="filterDiv lightbox amistad" href="<?php base_url(); ?>enviarPostales"><img  class="img-thumbnail img-fluid image" id="img1" src="assets/img/postales/amistad/image2.png"></a></div>
+              <div class="col-md-6 col-lg-4 item"><a class="filterDiv lightbox amor" href="assets/img/postales/amor-amistad/image2.jpg"><img class="img-thumbnail img-fluid image" src="assets/img/postales/amor/image2.png"></a></div>
+              <div class="col-md-6 col-lg-4 item"><a class="filterDiv lightbox cumpleanos" href="assets/img/scenery/image6.jpg"><img class="img-thumbnail img-fluid image" src="assets/img/postales/cumpleanos/image2.png"></a></div>
+              <div class="col-md-6 col-lg-4 item"><a class="filterDiv lightbox invitacion" href="assets/img/scenery/image5.jpg"><img class="img-thumbnail img-fluid image" src="assets/img/postales/invitacion/image2.png"></a></div>
+              <div class="col-md-6 col-lg-4 item"><a class="filterDiv lightbox saludos" href="assets/img/scenery/image1.jpg"><img class="img-thumbnail img-fluid image" src="assets/img/postales/saludos/image2.png"></a></div>
+              <div class="col-md-6 col-lg-4 item"><a class="filterDiv lightbox amistad" href="<?php base_url(); ?>enviarPostales"><img  class="img-thumbnail img-fluid image" id="img1" src="assets/img/postales/amistad/image3.png"></a></div>
+              <div class="col-md-6 col-lg-4 item"><a class="filterDiv lightbox amor" href="assets/img/postales/amor-amistad/image2.jpg"><img class="img-thumbnail img-fluid image" src="assets/img/postales/amor/image3.png"></a></div>
+              <div class="col-md-6 col-lg-4 item"><a class="filterDiv lightbox cumpleanos" href="assets/img/scenery/image6.jpg"><img class="img-thumbnail img-fluid image" src="assets/img/postales/cumpleanos/image3.png"></a></div>
+              <div class="col-md-6 col-lg-4 item"><a class="filterDiv lightbox invitacion" href="assets/img/scenery/image5.jpg"><img class="img-thumbnail img-fluid image" src="assets/img/postales/invitacion/image3.png"></a></div>
+              <div class="col-md-6 col-lg-4 item"><a class="filterDiv lightbox saludos" href="assets/img/scenery/image1.jpg"><img class="img-thumbnail img-fluid image" src="assets/img/postales/saludos/image3.png"></a></div>
+              <div class="col-md-6 col-lg-4 item"><a class="filterDiv lightbox amistad" href="<?php base_url(); ?>enviarPostales"><img  class="img-thumbnail img-fluid image" id="img1" src="assets/img/postales/amistad/image4.png"></a></div>
+              <div class="col-md-6 col-lg-4 item"><a class="filterDiv lightbox amor" href="assets/img/postales/amor-amistad/image2.jpg"><img class="img-thumbnail img-fluid image" src="assets/img/postales/amor/image4.png"></a></div>
+              <div class="col-md-6 col-lg-4 item"><a class="filterDiv lightbox cumpleanos" href="assets/img/scenery/image6.jpg"><img class="img-thumbnail img-fluid image" src="assets/img/postales/cumpleanos/image4.png"></a></div>
+              <div class="col-md-6 col-lg-4 item"><a class="filterDiv lightbox invitacion" href="assets/img/scenery/image5.jpg"><img class="img-thumbnail img-fluid image" src="assets/img/postales/invitacion/image4.png"></a></div>
+              <div class="col-md-6 col-lg-4 item"><a class="filterDiv lightbox saludos" href="assets/img/scenery/image1.jpg"><img class="img-thumbnail img-fluid image" src="assets/img/postales/saludos/image4.png"></a></div>
+              <div class="col-md-6 col-lg-4 item"><a class="filterDiv lightbox amistad" href="<?php base_url(); ?>enviarPostales"><img  class="img-thumbnail img-fluid image" id="img1" src="assets/img/postales/amistad/image5.png"></a></div>
+              <div class="col-md-6 col-lg-4 item"><a class="filterDiv lightbox amor" href="assets/img/postales/amor-amistad/image2.jpg"><img class="img-thumbnail img-fluid image" src="assets/img/postales/amor/image5.png"></a></div>
+              <div class="col-md-6 col-lg-4 item"><a class="filterDiv lightbox cumpleanos" href="assets/img/scenery/image6.jpg"><img class="img-thumbnail img-fluid image" src="assets/img/postales/cumpleanos/image5.png"></a></div>
+              <div class="col-md-6 col-lg-4 item"><a class="filterDiv lightbox invitacion" href="assets/img/scenery/image5.jpg"><img class="img-thumbnail img-fluid image" src="assets/img/postales/invitacion/image5.png"></a></div>
+              <div class="col-md-6 col-lg-4 item"><a class="filterDiv lightbox saludos" href="assets/img/scenery/image1.jpg"><img class="img-thumbnail img-fluid image" src="assets/img/postales/saludos/image5.png"></a></div>
 
-<body>
-  <div class="fixed-top">
-    <nav class="navbar navbar-light navbar-expand-lg bg-white clean-navbar">
-        <div class="container"><a class="navbar-brand logo" href="index.php">iPostal</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse"
-                id="navcol-1">
-                <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="<?php base_url(); ?>inicio">Inicio</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="<?php base_url(); ?>caracteristicas">Características</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="<?php base_url(); ?>postales">Postales</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="<?php base_url(); ?>about">Acerca de</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="<?php base_url(); ?>contacto">Contáctanos</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="<?php base_url(); ?>login">Login</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="<?php base_url(); ?>registro">Registrarme</a></li>
-                </ul>
             </div>
         </div>
-    </nav>
-        <div class="chapternav-category">
-          <div class="chapternav-items">
-            <li class="chapternav-item">
-              <a>Halloween</a>
-            </li>
-            <li class="chapternav-item">
-              <a>Navidad</a>
-            </li>
-            <li class="chapternav-item">
-              <a>San Valentín</a>
-            </li>
-            <li class="chapternav-item">
-              <a>Cumplea&ntilde;os</a>
-            </li>
-          </div>
-        </div>
-    </div>
+    </section>
+</main>
 
-    <main class="page gallery-page">
-        <section class="clean-block clean-gallery dark">
-            <div class="container">
-                <div class="block-heading" style="padding-top: 140px;">
-                    <h2 class="text-info">Postales</h2>
-                    <p>Elige la postal que más te agrade. Exiten diferentes categorías que se acomodan a lo que necesitas.&nbsp;</p>
-                </div>
-                
-               
-                <div class="row">
-                    <div class="col-md-6 col-lg-4 item"><a class="lightbox" href="<?php base_url(); ?>enviarPostales"><img  class="img-thumbnail img-fluid image" id="img1" src="assets/img/postales/amor-amistad/image1.jpg"  ></a></div>
-                    <div class="col-md-6 col-lg-4 item"><a class="lightbox" href="assets/img/postales/amor-amistad/image2.jpg"><img class="img-thumbnail img-fluid image" src="assets/img/postales/amor-amistad/image2.jpg"></a></div>
-                    <div class="col-md-6 col-lg-4 item"><a class="lightbox" href="assets/img/scenery/image6.jpg"><img class="img-thumbnail img-fluid image" src="assets/img/scenery/image6.jpg"></a></div>
-                    <div class="col-md-6 col-lg-4 item"><a class="lightbox" href="assets/img/scenery/image5.jpg"><img class="img-thumbnail img-fluid image" src="assets/img/scenery/image5.jpg"></a></div>
-                    <div class="col-md-6 col-lg-4 item"><a class="lightbox" href="assets/img/scenery/image1.jpg"><img class="img-thumbnail img-fluid image" src="assets/img/scenery/image1.jpg"></a></div>
-                    <div class="col-md-6 col-lg-4 item"><a class="lightbox" href="assets/img/scenery/image4.jpg"><img class="img-thumbnail img-fluid image" src="assets/img/scenery/image4.jpg"></a></div>
-                    <div class="col-md-6 col-lg-4 item"><a class="lightbox" href="assets/img/scenery/image6.jpg"><img class="img-thumbnail img-fluid image" src="assets/img/scenery/image6.jpg"></a></div>
-                    <div class="col-md-6 col-lg-4 item"><a class="lightbox" href="assets/img/scenery/image5.jpg"><img class="img-thumbnail img-fluid image" src="assets/img/scenery/image5.jpg"></a></div>
-                    <div class="col-md-6 col-lg-4 item"><a class="lightbox" href="assets/img/scenery/image1.jpg"><img class="img-thumbnail img-fluid image" src="assets/img/scenery/image1.jpg"></a></div>
-                </div>
-            </div>
-        </section>
-    </main>
-    <script>$(document).ready(function(){
-           
-           $("#hola").click(function(){
-               //  $("p:not(#arbol)").hide(10000);
-               $( "#img1" ).fadeOut();
-           });
-       });
-   
-   </script>
+<script>
+filterSelection('all')
+  function filterSelection(c) {
+    var x, i;
+    x = document.getElementsByClassName("filterDiv");
+    if (c == "all") c = "";
+    for (i = 0; i < x.length; i++) {
+      w3RemoveClass(x[i], "show");
+      if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+    }
+  }
+
+  function w3AddClass(element, name) {
+    var i, arr1, arr2;
+    arr1 = element.className.split(" ");
+    arr2 = name.split(" ");
+    for (i = 0; i < arr2.length; i++) {
+      if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+    }
+  }
+
+  function w3RemoveClass(element, name) {
+    var i, arr1, arr2;
+    arr1 = element.className.split(" ");
+    arr2 = name.split(" ");
+    for (i = 0; i < arr2.length; i++) {
+      while (arr1.indexOf(arr2[i]) > -1) {
+        arr1.splice(arr1.indexOf(arr2[i]), 1);
+      }
+    }
+    element.className = arr1.join(" ");
+  }
+
+</script>

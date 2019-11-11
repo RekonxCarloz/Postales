@@ -1,22 +1,4 @@
-<body>
-  <div class="fixed-top">
-    <nav class="navbar navbar-light navbar-expand-lg bg-white clean-navbar">
-        <div class="container"><a class="navbar-brand logo" href="index.php">iPostal</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse"
-                id="navcol-1">
-                <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="<?php base_url(); ?>inicio">Inicio</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="<?php base_url(); ?>caracteristicas">Características</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="<?php base_url(); ?>postales">Postales</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="<?php base_url(); ?>about">Acerca de</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="<?php base_url(); ?>contacto">Contáctanos</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="<?php base_url(); ?>login">Login</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="<?php base_url(); ?>registro">Registrarme</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-  </div>
+
 <main class="page registration-page">
         <section class="clean-block clean-form dark">
             <div class="container">
@@ -83,4 +65,17 @@
             }
         });
     });
+
+    function validarEmail(elemento) {
+
+        var texto = document.getElementById(elemento.id).value;
+        var regex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+
+        if (!regex.test(texto)) {
+          document.getElementById("resultado").innerHTML = "Correo invalido";
+        } else {
+          document.getElementById("resultado").innerHTML = "";
+        }
+
+      }
 </script>
