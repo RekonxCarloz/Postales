@@ -28,3 +28,11 @@
     margin: 0 -.11765em;
     padding: 0 20px;
 }
+
+.filterDiv {
+  display: none;
+}
+
+.show {
+  display: block;
+}
