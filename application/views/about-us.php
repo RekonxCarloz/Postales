@@ -28,7 +28,7 @@
                     <div class="col-sm-6 col-lg-4">
                         <div class="card clean-card text-center">
                             <div class="card-body info">
-                                <h4 class="card-title">Rodrigo</h4>
+                                <h4 class="card-title">Rodrigo Garc&iacute;a</h4>
                                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                                 <div class="icons"><a href="#"><i class="icon-social-facebook"></i></a><a href="#"><i class="icon-social-instagram"></i></a><a href="#"><i class="icon-social-twitter"></i></a></div>
                             </div>

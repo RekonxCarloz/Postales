@@ -29,5 +29,18 @@
                 }
             }
         }
+
+        public function logearse($data) {
+            $query = $this->db->get_where('usuario', array( # Consulta con where = SELECT * FROM usuario WHERE
+                'email' => $data['email'],
+                'contrasena' => md5($data['contrasena'])
+            ));
+            $result = $query->row();
+            if(isset($result)) {
+                return TRUE;
+            } else {
+                return FALSE;
+            }
+        }
     }
 ?>
