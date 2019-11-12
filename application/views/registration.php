@@ -41,7 +41,7 @@
                 e.preventDefault();
                 $.ajax({
                     method:"POST",
-                    url:"<?php base_url(); ?>Procesamiento/registroAjax",
+                    url:"<?php base_url(); ?>registroAjax",
                     data:$("#formRegistro").serialize(),
                     cache:false,
                     success:function(respAX){

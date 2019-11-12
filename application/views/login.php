@@ -26,7 +26,7 @@
                 e.preventDefault();
                 $.ajax({
                     method:"POST",
-                    url:"<?php base_url(); ?>Procesamiento/loginAjax",
+                    url:"<?php base_url(); ?>loginAjax",
                     data:$("#formLogin").serialize(),
                     cache:false,
                     success:function(respAX){

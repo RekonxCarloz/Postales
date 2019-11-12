@@ -1,6 +1,6 @@
 <?php if (! defined("BASEPATH")) exit('No direct script access allowed');
 
-    class Postal_model extends CI_Model {
+    class Formularios_model extends CI_Model {
         function __construct() {
             parent::__construct();
             $this->load->database();
@@ -35,11 +35,10 @@
                 'email' => $data['email'],
                 'contrasena' => md5($data['contrasena'])
             ));
-            $result = $query->row();
-            if(isset($result)) {
-                return TRUE;
+            if($query->num_rows() > 0) {
+                return $query->row();
             } else {
-                return FALSE;
+                return null;
             }
         }
     }
