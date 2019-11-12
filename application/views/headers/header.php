@@ -27,7 +27,6 @@
     <script src="<?php base_url(); ?>assets/js/smoothproducts.min.js"></script>
     <script src="<?php base_url(); ?>assets/js/theme.js"></script>
     <script src="<?php base_url(); ?>assets/confirm/dist/jquery-confirm.min.js"></script>
-    <script src="<?php base_url(); ?>assets/fontawesome/js/all.min.js"></script>
     <script src="<?php base_url(); ?>assets/js/simplemde.min.js"></script>
 
 </head>

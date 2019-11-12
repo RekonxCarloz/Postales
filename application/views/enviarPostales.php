@@ -4,9 +4,7 @@
             <div class="block-heading" style="padding-top: 140px;">
                 <h2 class="text-info">¡Redacta tu mensaje!</h2>
             </div>
-
-            <textarea id="mensajePostal" name="mensajePostal" rows="8" class="col-sm"></textarea>
-
+                <textarea id="mensajePostal"></textarea>
             <div class="row">
                 <div class="col-sm">
                     <br>
@@ -42,10 +40,10 @@
   var simplemde = new SimpleMDE({
     element: document.getElementById("mensajePostal"),
     autosave: {
-  		enabled: true,
-  		uniqueId: "MyUniqueID",
-  		delay: 50,
-  	}
+      enabled: true,
+      uniqueId: "MyUniqueID",
+      delay: 1000,
+    }
   });
 
 </script>
