@@ -1,9 +1,9 @@
 </div>
 <main class="page landing-page">
-    <section class="clean-block clean-hero" style="background-image:url(&quot;assets/img/tech/image4.jpg&quot;);color:rgba(236, 255, 216,.6);">
+    <section class="clean-block clean-hero" style="background-image:url(&quot;assets/img/tech/image4.jpg&quot;);color:rgba(236, 255, 216,.4);">
         <div class="text">
             <h2>Bienvenido a iPostal.</h2>
-            <p>Mandar postales a tus conocidos, nunca fue tan fácil. Únete al equipo de iPostal y comienza a crear tus propias postales.</p><a class="btn-light btn-lg" href="<?php base_url(); ?>registro">Registrarme</a></div>
+            <p>Mandar postales a tus conocidos, nunca fue tan fácil. Únete al equipo de iPostal y comienza a crear tus propias postales.</p><a class="btn btn-outline-light" href="<?php base_url(); ?>registro">Empieza ahora</a></div>
     </section>
     <section class="clean-block clean-info dark">
         <div class="container">

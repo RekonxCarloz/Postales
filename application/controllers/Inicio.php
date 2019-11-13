@@ -10,10 +10,15 @@ class Inicio extends CI_Controller {
     if ($dato == 1 || $dato == 2) {
       if ($dato == 1) {
         $this->load->view('headers/headerActiveSesion',$n);
-      } else $this->load->view('headers/headerAdmin');
-    } else $this->load->view('headers/header');
-
-      $this->load->view('inicio');
+        $this->load->view('tipoInicios/inicioLoginUser');
+      } else {
+        $this->load->view('headers/headerAdmin');
+        $this->load->view('tipoInicios/inicioLoginAdmin');
+      }
+    } else {
+      $this->load->view('headers/header');
+      $this->load->view('tipoInicios/inicio');
+    }
       $this->load->view('footer/footer');
    }
    public function caracteristicas(){
@@ -23,7 +28,7 @@ class Inicio extends CI_Controller {
       if ($dato == 1) {
         $this->load->view('headers/headerActiveSesion',$n);
       } else $this->load->view('headers/headerAdmin');
-    } else $this->load->view('headers/header'); 
+    } else $this->load->view('headers/header');
 
      $this->load->view('features');
      $this->load->view('footer/footer');
@@ -35,13 +40,13 @@ class Inicio extends CI_Controller {
       if ($dato == 1) {
         $this->load->view('headers/headerActiveSesion',$n);
       } else $this->load->view('headers/headerAdmin');
-    } else $this->load->view('headers/header'); 
-    
+    } else $this->load->view('headers/header');
+
     $this->load->view('about-us');
      $this->load->view('footer/footer');
    }
    public function registro(){
-    $dato = $this->session->userdata('login'); 
+    $dato = $this->session->userdata('login');
     if (!($dato == 1 || $dato == 2)) {
       $this->load->view('headers/header');
       $this->load->view('registration');
@@ -49,7 +54,7 @@ class Inicio extends CI_Controller {
     } else header("Location: ". base_url()); # Si la sesion esta activa no puedes acceder al registro
   }
   public function login(){
-    $dato = $this->session->userdata('login'); 
+    $dato = $this->session->userdata('login');
     if (!($dato == 1 || $dato == 2)) {
       $this->load->view('headers/header');
       $this->load->view('login');
@@ -63,8 +68,8 @@ class Inicio extends CI_Controller {
       if ($dato == 1) {
         $this->load->view('headers/headerActiveSesion',$n);
       } else $this->load->view('headers/headerAdmin');
-    } else $this->load->view('headers/header'); 
-    
+    } else $this->load->view('headers/header');
+
     $this->load->view('contact-us');
      $this->load->view('footer/footer');
    }
@@ -75,7 +80,7 @@ class Inicio extends CI_Controller {
       if ($dato == 1) {
         $this->load->view('headers/headerActiveSesion',$n);
       } else $this->load->view('headers/headerAdmin');
-    } else $this->load->view('headers/header'); 
+    } else $this->load->view('headers/header');
 
      $this->load->view('categoriaPostales');
      $this->load->view('footer/footer');
@@ -88,7 +93,7 @@ class Inicio extends CI_Controller {
         $this->load->view('headers/headerActiveSesion',$n);
       } else $this->load->view('headers/headerAdmin');
     } else $this->load->view('headers/header');
-    
+
     $this->load->view('enviarPostales');
     $this->load->view('footer/footer');
   }
