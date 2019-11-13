@@ -44,7 +44,7 @@
                     <li class="nav-item" role="presentation"><a class="nav-link" href="<?php base_url(); ?>about">Acerca de</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="<?php base_url(); ?>contacto">Contáctanos</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="<?php base_url(); ?>contacto">Administrador</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="<?php base_url(); ?>login">Cerrar Sesi&oacute;n</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="<?php base_url(); ?>salir">Cerrar Sesi&oacute;n</a></li>
                 </ul>
             </div>
         </div>

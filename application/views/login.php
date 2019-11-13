@@ -38,10 +38,8 @@
                             content:AX.msj,
                             type:tipoAlerts[AX.val],
                             onDestroy:function(){
-                                if (AX.val == 2) {
-                                    window.location.replace("<?php base_url()?>SesionActivaUser");
-                                } else if(AX.val == 1) {
-                                    window.location.replace("<?php base_url()?>SesionActivaAdmin");
+                                if (AX.val == 1 || AX.val == 2) {
+                                    window.location.replace("<?= base_url();?>inicio");
                                 } else {
                                     $('#formLogin')[0].reset();
                                 }

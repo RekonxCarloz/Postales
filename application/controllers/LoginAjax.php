@@ -17,13 +17,15 @@ class LoginAjax extends CI_Controller {
             $nombre = $result->nombre;
             $email = $result->email;
             $respAX["title"] = "<h4 class='text-info text-success'>¡Bienvenid&commat;!:</h4>";
-            $this->session->set_userdata(array(
-                'email' => $email,
+            $dato = ($result->privilegio == 0)?1:2;
+            $s = array( # Son los datos que se meteran a la sesion
+                'priv' => $email,
                 'nombre' => $nombre,
-                'login' => true
-            ));
+                'login' => $dato
+            );
+            $this->session->set_userdata($s); # Mandamos el array a la variable sesion para cargar los datos
             if ($result->privilegio == 1) { # Si es administrador entonces..
-                $respAX["val"] = 1;
+                $respAX["val"] = 1; 
                 $respAX["msj"] = "<h5 class='text-info text-dark'>Administrador</h5>";
                 $respAX["icon"] = "fas fa-check fa-2x";
             } else { # Si entra aquí entonces es un usuario
