@@ -2,10 +2,12 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
+<meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   <title>Inicio - iPostal</title>
   <meta name="description" content="Proyecto Tecnologías para la Web. Postales">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
   <link rel="stylesheet" href="<?php base_url(); ?>assets/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
   <link rel="stylesheet" href="<?php base_url(); ?>assets/fonts/simple-line-icons.min.css">
@@ -16,10 +18,10 @@
   <link rel="stylesheet" href="<?php base_url(); ?>assets/fontawesome/css/all.css">
   <link rel="stylesheet" href="<?php base_url(); ?>assets/confirm/dist/jquery-confirm.min.css">
   <link rel="stylesheet" href="<?php base_url(); ?>assets/css/enviarPostalCSS.css">
-  <link rel="stylesheet" href="<?php base_url(); ?>assets/css/simplemde.min.css">
 
 
     <script src="<?php base_url(); ?>assets/js/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
     <script src="<?php base_url(); ?>assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
     <script src="<?php base_url(); ?>assets/js/validetta/validetta.min.js"></script>
@@ -27,7 +29,6 @@
     <script src="<?php base_url(); ?>assets/js/smoothproducts.min.js"></script>
     <script src="<?php base_url(); ?>assets/js/theme.js"></script>
     <script src="<?php base_url(); ?>assets/confirm/dist/jquery-confirm.min.js"></script>
-    <script src="<?php base_url(); ?>assets/js/simplemde.min.js"></script>
 
 </head>
 <body>
@@ -48,4 +49,4 @@
             </div>
         </div>
     </nav>
-  </div>
+

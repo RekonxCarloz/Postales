@@ -1,3 +1,4 @@
+</div>
 <main class="page gallery-page">
     <section class="clean-block clean-gallery dark">
         <div class="container">

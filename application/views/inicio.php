@@ -1,4 +1,4 @@
-
+</div>
 <main class="page landing-page">
     <section class="clean-block clean-hero" style="background-image:url(&quot;assets/img/tech/image4.jpg&quot;);color:rgba(236, 255, 216,.6);">
         <div class="text">

@@ -1,3 +1,33 @@
+<div class="myBtnContainer chapternav-category">
+      <div class="chapternav-items">
+        <li class="chapternav-item">
+          <img src="https://gusanito.com/v5img/img/category_icons/color/todas.png">
+          <a class="a todas" id="showAll" onclick="filterSelection('all')" href=>Todas</a>
+        </li>
+        <li class="chapternav-item">
+          <img src="https://gusanito.com/v5img/img/category_icons/color/invitacion.png">
+          <a class="a invitacion" id="showInv" onclick="filterSelection('invitacion')" href="#">Invitaci&oacute;n</a>
+        </li>
+        <li class="chapternav-item">
+          <img src="https://gusanito.com/v5img/img/category_icons/color/amor.png">
+          <a class="a amor" id="showAmor" onclick="filterSelection('amor')" href="#">Amor</a>
+        </li>
+        <li class="chapternav-item">
+          <img src="https://gusanito.com/v5img/img/category_icons/color/amistad.png">
+          <a class="a amistad" id="showAmistad" onclick="filterSelection('amistad')" href="#">Amistad</a>
+        </li>
+        <li class="chapternav-item">
+          <img src="https://gusanito.com/v5img/img/category_icons/color/cumpleanos.png">
+          <a class="a cumpleanos" id="showCumple" onclick="filterSelection('cumpleanos')" href="#">Cumplea&ntilde;os</a>
+        </li>
+        <li class="chapternav-item">
+          <img src="https://gusanito.com/v5img/img/category_icons/color/saludos.png">
+          <a class="a saludos" id="showSaludos" onclick="filterSelection('saludos')" href="#">Saludos</a>
+        </li>
+      </div>
+    </div>
+</div>
+
 <main class="page gallery-page">
     <section class="clean-block clean-gallery dark">
         <div class="container">

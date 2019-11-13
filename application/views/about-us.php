@@ -1,4 +1,4 @@
-
+</div>
     <main class="page">
         <section class="clean-block about-us">
             <div class="container">

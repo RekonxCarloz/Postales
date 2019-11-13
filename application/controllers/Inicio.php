@@ -46,7 +46,7 @@ class Inicio extends CI_Controller {
       $this->load->view('headers/header');
       $this->load->view('registration');
       $this->load->view('footer/footer');
-    } else header("Location: ". base_url());
+    } else header("Location: ". base_url()); # Si la sesion esta activa no puedes acceder al registro
   }
   public function login(){
     $dato = $this->session->userdata('login'); 
@@ -54,7 +54,7 @@ class Inicio extends CI_Controller {
       $this->load->view('headers/header');
       $this->load->view('login');
       $this->load->view('footer/footer');
-    } else header("Location: ". base_url());
+    } else header("Location: ". base_url()); # Si la sesión está activa no puedes acceder al login
    }
    public function contacto(){
     $dato = $this->session->userdata('login');
@@ -69,7 +69,14 @@ class Inicio extends CI_Controller {
      $this->load->view('footer/footer');
    }
    public function postales(){
-     $this->load->view('headers/headerPostales');
+    $dato = $this->session->userdata('login');
+    $n = array('name' => $this->session->userdata('nombre'));
+    if ($dato == 1 || $dato == 2) {
+      if ($dato == 1) {
+        $this->load->view('headers/headerActiveSesion',$n);
+      } else $this->load->view('headers/headerAdmin');
+    } else $this->load->view('headers/header'); 
+
      $this->load->view('categoriaPostales');
      $this->load->view('footer/footer');
    }
