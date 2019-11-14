@@ -80,7 +80,7 @@ class Inicio extends CI_Controller {
       if ($dato == 1) {
         $this->load->view('headers/headerActiveSesion',$n);
       } else $this->load->view('headers/headerAdmin');
-    } else $this->load->view('headers/header');
+    } else header("Location: ". base_url()."inicio"); # Si no estas logueado no puedes acceder al apartado postales
 
      $this->load->view('categoriaPostales');
      $this->load->view('footer/footer');
@@ -88,15 +88,12 @@ class Inicio extends CI_Controller {
    
    public function enviarPostales($nombre_imagen){
     $dato = $this->session->userdata('login');
-    if(!$dato){
-      redirect("/");
-    }
     $n = array('name' => $this->session->userdata('nombre'));
-      if ($dato == 2) {
-        $this->load->view('headers/headerAdmin',$n);
-      } else {
+    if ($dato == 1 || $dato == 2) {
+      if ($dato == 1) {
         $this->load->view('headers/headerActiveSesion',$n);
-    }
+      } else $this->load->view('headers/headerAdmin');
+    } else header("Location: ". base_url()."inicio"); # Si no estas logueado no puedes acceder al apartado postales
 
       print_r($nombre_imagen);
       $array_urls = array(
