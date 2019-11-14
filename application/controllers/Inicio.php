@@ -85,16 +85,53 @@ class Inicio extends CI_Controller {
      $this->load->view('categoriaPostales');
      $this->load->view('footer/footer');
    }
-   public function enviarPostales(){
+   
+   public function enviarPostales($nombre_imagen){
     $dato = $this->session->userdata('login');
+    if(!$dato){
+      redirect("/");
+    }
     $n = array('name' => $this->session->userdata('nombre'));
-    if ($dato == 1 || $dato == 2) {
-      if ($dato == 1) {
+      if ($dato == 2) {
+        $this->load->view('headers/headerAdmin',$n);
+      } else {
         $this->load->view('headers/headerActiveSesion',$n);
-      } else $this->load->view('headers/headerAdmin');
-    } else $this->load->view('headers/header');
+    }
 
-    $this->load->view('enviarPostales');
+      print_r($nombre_imagen);
+      $array_urls = array(
+        "amor1" => "assets/img/postales/amor/image1.png",
+        "amor2" => "assets/img/postales/amor/image2.png",
+        "amor3" => "assets/img/postales/amor/image3.png",
+        "amor4" => "assets/img/postales/amor/image4.png",
+        "amor5" => "assets/img/postales/amor/image5.png",
+        "amistad1" =>"assets/img/postales/amistad/image1.png",
+        "amistad2" =>"assets/img/postales/amistad/image2.png",
+        "amistad3" =>"assets/img/postales/amistad/image3.png",
+        "amistad4" =>"assets/img/postales/amistad/image4.png",
+        "amistad5" =>"assets/img/postales/amistad/image5.png",
+        "cumpleanos1" =>"assets/img/postales/cumpleanos/image1.png",
+        "cumpleanos2" =>"assets/img/postales/cumpleanos/image2.png",
+        "cumpleanos3" =>"assets/img/postales/cumpleanos/image3.png",
+        "cumpleanos4" =>"assets/img/postales/cumpleanos/image4.png",
+        "cumpleanos5" =>"assets/img/postales/cumpleanos/image5.png",
+        "invitacion1" =>"assets/img/postales/invitacion/image1.png",
+        "invitacion2" =>"assets/img/postales/invitacion/image2.png",
+        "invitacion3" =>"assets/img/postales/invitacion/image3.png",
+        "invitacion4" =>"assets/img/postales/invitacion/image4.png",
+        "invitacion5" =>"assets/img/postales/invitacion/image5.png",
+        "saludos1" =>"assets/img/postales/saludos/image1.png",
+        "saludos2" =>"assets/img/postales/saludos/image2.png",
+        "saludos3" =>"assets/img/postales/saludos/image3.png",
+        "saludos4" =>"assets/img/postales/saludos/image4.png",
+        "saludos5" =>"assets/img/postales/saludos/image5.png",
+
+
+      );
+      $data = array();
+      $data["imagen"] = $array_urls[$nombre_imagen];
+      $data["nombreP"]= $n;
+    $this->load->view('enviarPostales',$data);
     $this->load->view('footer/footer');
   }
   public function cerrarSesion() {

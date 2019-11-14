@@ -3,22 +3,23 @@
     <section class="clean-block clean-gallery dark">
         <div class="container">
             <div class="block-heading" style="padding-top: 140px;">
+            <form action="" method="POST">
                 <h2 class="text-info">¡Redacta tu mensaje!</h2>
             </div>
-                <textarea id="mensajePostal"></textarea>
+                <textarea id="mensajePostal" name="mensajeiPostal"></textarea>
             <div class="row">
                 <div class="col-sm">
                     <br>
-                    <img class="img-thumbnail img-fluid image" id="img1" src="assets/img/postales/amor/image1.png">
+                    <img class="img-thumbnail img-fluid image" id="img1" src="<?=base_url().$imagen?>">
                 </div>
             </div>
             <br>
 
-            <form action="" method="POST">
+            
                 <div align="center" class="row">
                     <div class="col-md-4 col-lg-6 item">
                         <i id="iconoW" class="fab fa-whatsapp fa-5x green-text"></i> Número de WhatsApp:
-                        <input id="whats" name="whats" type="number">
+                        <input id="whats" name="whats" type="tel">
                     </div>
                     <div class="col-md-4 col-lg-6 item">
                         <i id="iconoM" class="fas fa-envelope-square fa-5x red-text"></i> Mail:
@@ -82,12 +83,27 @@ if($_POST  ){
 
         // Attachments
         $mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
-        $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
     */
+     $imagenNuevo="";
+    $r = str_split($imagen);
+    for($i=0; $i<count($r); $i++) 
+        if($r[$i]=="/"){
+        $r[$i]="\ ";
+        $r[$i]=trim($r[$i]);
+        }
+    foreach($r as $char){
+        $imagenNuevo=$imagenNuevo.$char;
+        
+    }
+         
+    
+    
+        $mail->addAttachment(trim('C:\xampp\htdocs\Postales\ ').$imagenNuevo, 'iPostal.png');    // Optional name
+    
         // Content
         $mail->isHTML(true);                                  // Set email format to HTML
         $mail->Subject = 'Esta es una Postal de iPostal';
-        $mail->Body    = 'Esta es una postal <b>FELICIDADES ESTA ES TU POSTAL</b>';
+        $mail->Body    = '<b>FELICIDADES ESTA ES TU POSTAL</b>: <br>'.$_POST["mensajeiPostal"];
       //  $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
         $mail->send();
@@ -96,14 +112,19 @@ if($_POST  ){
         echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     }
 
+$b64image="data:image/png;base64,".base64_encode(file_get_contents(base_url().$imagen));
+//echo($imagen);
+
 $data = [
 
     'phone' => '52'.$_POST["whats"], // Receivers phone
-    'body' => 'Tienes una nueva postal de: , en '.$_POST["correo"].", dale un vistazo!" // Message
+    'body' =>  $b64image,
+    'filename'=> "imagen",
+    'caption'=>'Tienes una nueva postal de: '.$name.', en '.$_POST["correo"].", dale un vistazo!" // Message
 ];
 $json = json_encode($data); // Encode data to JSON
 // URL for request POST /message
-$url = 'https://eu23.chat-api.com/instance77537/sendMessage?token=ubnxw573jbpbun87';
+$url = 'https://api.chat-api.com/instance79479/sendFile?token=fvm52qmpl45l6vu7';
 // Make a POST request
 $options = stream_context_create(['http' => [
         'method'  => 'POST',

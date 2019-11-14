@@ -58,5 +58,5 @@ $route['login'] = "Inicio/login";
 $route['contacto'] = "Inicio/contacto";
 $route['registro'] = "Inicio/registro";
 $route['postales'] = "Inicio/postales";
-$route['enviarPostales']="Inicio/enviarPostales";
+$route['enviarPostales/(:any)']="Inicio/enviarPostales/$1";
 $route['salir'] = "Inicio/cerrarSesion";
