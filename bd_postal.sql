@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-11-2019 a las 02:09:03
+-- Tiempo de generación: 17-11-2019 a las 07:36:34
 -- Versión del servidor: 10.4.8-MariaDB
 -- Versión de PHP: 7.3.10
 
@@ -75,36 +75,36 @@ CREATE TABLE `postal` (
 --
 
 INSERT INTO `postal` (`idPostal`, `nombre`, `rating`, `idCategoria`, `ruta`) VALUES
-(1, 'image1.png', 0, 1, 'cumpleanos/image1.png\r'),
-(2, 'image2.png', 0, 1, 'cumpleanos/image2.png\r'),
-(3, 'image3.png', 0, 1, 'cumpleanos/image3.png\r'),
-(4, 'image4.png', 0, 1, 'cumpleanos/image4.png\r'),
-(5, 'image5.png', 0, 1, 'cumpleanos/image5.png\r'),
-(6, 'image6.png', 0, 1, 'cumpleanos/image6.png\r'),
-(7, 'image1.png', 0, 2, 'amistad/image1.png\r'),
-(8, 'image2.png', 0, 2, 'amistad/image2.png\r'),
-(9, 'image3.png', 0, 2, 'amistad/image3.png\r'),
-(10, 'image4.png', 0, 2, 'amistad/image4.png\r'),
-(11, 'image5.png', 0, 2, 'amistad/image5.png\r'),
-(12, 'image6.png', 0, 2, 'amistad/image6.png\r'),
-(13, 'image1.png', 0, 3, 'amor/image1.png\r'),
-(14, 'image2.png', 0, 3, 'amor/image2.png\r'),
-(15, 'image3.png', 0, 3, 'amor/image3.png\r'),
-(16, 'image4.png', 0, 3, 'amor/image4.png\r'),
-(17, 'image5.png', 0, 3, 'amor/image5.png\r'),
-(18, 'image6.png', 0, 3, 'amor/image6.png\r'),
-(19, 'image1.png', 0, 4, 'saludos/image1.png\r'),
-(20, 'image2.png', 0, 4, 'saludos/image2.png\r'),
-(21, 'image3.png', 0, 4, 'saludos/image3.png\r'),
-(22, 'image4.png', 0, 4, 'saludos/image4.png\r'),
-(23, 'image5.png', 0, 4, 'saludos/image5.png\r'),
-(24, 'image6.png', 0, 4, 'saludos/image6.png\r'),
-(25, 'image1.png', 0, 5, 'invitacion/image1.png\r'),
-(26, 'image2.png', 0, 5, 'invitacion/image2.png\r'),
-(27, 'image3.png', 0, 5, 'invitacion/image3.png\r'),
-(28, 'image4.png', 0, 5, 'invitacion/image4.png\r'),
-(29, 'image5.png', 0, 5, 'invitacion/image5.png\r'),
-(30, 'image6.png', 0, 5, 'invitacion/image6.png\r');
+(1, 'cumpleanos1', 0, 1, 'cumpleanos/image1.png\r'),
+(2, 'cumpleanos2', 0, 1, 'cumpleanos/image2.png\r'),
+(3, 'cumpleanos3', 0, 1, 'cumpleanos/image3.png\r'),
+(4, 'cumpleanos4', 0, 1, 'cumpleanos/image4.png\r'),
+(5, 'cumpleanos5', 0, 1, 'cumpleanos/image5.png\r'),
+(6, 'cumpleanos6', 0, 1, 'cumpleanos/image6.png\r'),
+(7, 'amistad1', 0, 2, 'amistad/image1.png\r'),
+(8, 'amistad2', 0, 2, 'amistad/image2.png\r'),
+(9, 'amistad3', 0, 2, 'amistad/image3.png\r'),
+(10, 'amistad4', 0, 2, 'amistad/image4.png\r'),
+(11, 'amistad5', 0, 2, 'amistad/image5.png\r'),
+(12, 'amistad6', 0, 2, 'amistad/image6.png\r'),
+(13, 'amor1', 0, 3, 'amor/image1.png\r'),
+(14, 'amor2', 0, 3, 'amor/image2.png\r'),
+(15, 'amor3', 0, 3, 'amor/image3.png\r'),
+(16, 'amor4', 0, 3, 'amor/image4.png\r'),
+(17, 'amor5', 0, 3, 'amor/image5.png\r'),
+(18, 'amor6', 0, 3, 'amor/image6.png\r'),
+(19, 'saludos1', 0, 4, 'saludos/image1.png\r'),
+(20, 'saludos2', 0, 4, 'saludos/image2.png\r'),
+(21, 'saludos3', 0, 4, 'saludos/image3.png\r'),
+(22, 'saludos4', 0, 4, 'saludos/image4.png\r'),
+(23, 'saludos5', 0, 4, 'saludos/image5.png\r'),
+(24, 'saludos6', 0, 4, 'saludos/image6.png\r'),
+(25, 'invitacion1', 0, 5, 'invitacion/image1.png\r'),
+(26, 'invitacion2', 0, 5, 'invitacion/image2.png\r'),
+(27, 'invitacion3', 0, 5, 'invitacion/image3.png\r'),
+(28, 'invitacion4', 0, 5, 'invitacion/image4.png\r'),
+(29, 'invitacion5', 0, 5, 'invitacion/image5.png\r'),
+(30, 'invitacion6', 0, 5, 'invitacion/image6.png\r');
 
 -- --------------------------------------------------------
 
@@ -140,7 +140,8 @@ CREATE TABLE `usuario` (
 
 INSERT INTO `usuario` (`idUsuario`, `nombre`, `contrasena`, `email`, `celular`, `genero`, `fechaNac`, `privilegio`) VALUES
 (1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'RRekon@hotmail.com', '5579101570', 'M', '1998-04-24', 1),
-(2, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'rodrigoreal9@gmail.com', '5529857787', 'm', '1998-08-22', 1);
+(2, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'rodrigoreal9@gmail.com', '5529857787', 'm', '1998-08-22', 1),
+(5, 'Adrián García Real', '21232f297a57a5a743894a0e4a801fc3', 'an.real@gmail.com', '5529857787', 'm', '2019-11-19', 0);
 
 -- --------------------------------------------------------
 
@@ -225,7 +226,7 @@ ALTER TABLE `reporte`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Restricciones para tablas volcadas
