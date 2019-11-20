@@ -7,6 +7,8 @@ class Inicio extends CI_Controller {
    public function index(){
     $dato = $this->session->userdata('login');
     $n = array('name' => $this->session->userdata('nombre'));
+    $justName= explode(" ",$n["name"]);
+    $n["name"] = $justName[0];
     if ($dato == 1 || $dato == 2) {
       if ($dato == 1) {
         $this->load->view('headers/headerActiveSesion',$n);
@@ -24,6 +26,8 @@ class Inicio extends CI_Controller {
    public function caracteristicas(){
     $dato = $this->session->userdata('login');
     $n = array('name' => $this->session->userdata('nombre'));
+    $justName= explode(" ",$n["name"]);
+    $n["name"] = $justName[0];
     if ($dato == 1 || $dato == 2) {
       if ($dato == 1) {
         $this->load->view('headers/headerActiveSesion',$n);
@@ -36,6 +40,8 @@ class Inicio extends CI_Controller {
    public function about(){
     $dato = $this->session->userdata('login');
     $n = array('name' => $this->session->userdata('nombre'));
+    $justName= explode(" ",$n["name"]);
+    $n["name"] = $justName[0];
     if ($dato == 1 || $dato == 2) {
       if ($dato == 1) {
         $this->load->view('headers/headerActiveSesion',$n);
@@ -64,6 +70,8 @@ class Inicio extends CI_Controller {
    public function contacto(){
     $dato = $this->session->userdata('login');
     $n = array('name' => $this->session->userdata('nombre'));
+    $justName= explode(" ",$n["name"]);
+    $n["name"] = $justName[0];
     if ($dato == 1 || $dato == 2) {
       if ($dato == 1) {
         $this->load->view('headers/headerActiveSesion',$n);
@@ -76,6 +84,8 @@ class Inicio extends CI_Controller {
    public function postales(){
     $dato = $this->session->userdata('login');
     $n = array('name' => $this->session->userdata('nombre'));
+    $justName= explode(" ",$n["name"]);
+    $n["name"] = $justName[0];
     if ($dato == 1 || $dato == 2) {
       if ($dato == 1) {
         $this->load->view('headers/headerActiveSesion',$n);
@@ -89,6 +99,9 @@ class Inicio extends CI_Controller {
    public function enviarPostales($nombre_imagen){
     $dato = $this->session->userdata('login');
     $n = array('name' => $this->session->userdata('nombre'));
+    $justName= explode(" ",$n["name"]);
+    $n["name"] = $justName[0];
+    print_r("Hola este es el nombre ");
     if ($dato == 1 || $dato == 2) {
       if ($dato == 1) {
         $this->load->view('headers/headerActiveSesion',$n);
