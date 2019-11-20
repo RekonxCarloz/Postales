@@ -40,7 +40,7 @@
 </head>
 <body>
   <div class="fixed-top">
-    <nav class="navbar navbar-light navbar-expand-lg bg-white clean-navbar" style="font-color: red; ">
+    <nav class="navbar navbar-light navbar-expand-lg bg-white clean-navbar">
         <div class="container"><a class="navbar-brand logo" href="<?=base_url()?>inicio">iPostal</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse"
                 id="navcol-1">
