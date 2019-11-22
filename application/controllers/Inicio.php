@@ -177,7 +177,9 @@ class Inicio extends CI_Controller {
   public function historial() {
     
     $this->load->model('envios_model');
-    $data['enviadas'] = $this->envios_model->getEnviadas();
+    $data['datos'] = $this->envios_model->getDatos(); # Aqui guarda la consulta de los datos de usuario
+    $data['enviadas'] = $this->envios_model->getEnviadas(); # Aqui guarda la consulta de las postales enviadas
+    $data['recibidas'] = $this->envios_model->getRecibidas(); # Aqui guarda la consulta de las postales recibidas
         $dato = $this->session->userdata('login');
         $n = array('name' => $this->session->userdata('nombre'));
         $justName= explode(" ",$n["name"]);
