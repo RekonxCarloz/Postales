@@ -173,6 +173,28 @@ class Inicio extends CI_Controller {
     $this->load->view('enviarPostales',$data);
     $this->load->view('footer/footer');
   }
+
+  public function historial() {
+    
+    $this->load->model('envios_model');
+    $data['enviadas'] = $this->envios_model->getEnviadas();
+        $dato = $this->session->userdata('login');
+        $n = array('name' => $this->session->userdata('nombre'));
+        $justName= explode(" ",$n["name"]);
+        $n["name"] = $justName[0];
+        if ($dato == 1 || $dato == 2) {
+            if ($dato == 1) {
+                $this->load->view('headers/headerActiveSesion',$n);
+                $this->load->view('history',$data);
+                $this->load->view('footer/footer');
+            } else {
+                $this->load->view('headers/headerAdmin');
+                $this->load->view('history',$data);
+                $this->load->view('footer/footer');
+            }
+        } else header("Location: ". base_url()."inicio");
+  }
+
   public function cerrarSesion() {
     $this->session->sess_destroy();
     header("Location: ". base_url());

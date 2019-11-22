@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-11-2019 a las 07:36:34
+-- Tiempo de generación: 22-11-2019 a las 18:17:55
 -- Versión del servidor: 10.4.8-MariaDB
 -- Versión de PHP: 7.3.10
 
@@ -75,36 +75,36 @@ CREATE TABLE `postal` (
 --
 
 INSERT INTO `postal` (`idPostal`, `nombre`, `rating`, `idCategoria`, `ruta`) VALUES
-(1, 'cumpleanos1', 0, 1, 'cumpleanos/image1.png\r'),
-(2, 'cumpleanos2', 0, 1, 'cumpleanos/image2.png\r'),
-(3, 'cumpleanos3', 0, 1, 'cumpleanos/image3.png\r'),
-(4, 'cumpleanos4', 0, 1, 'cumpleanos/image4.png\r'),
-(5, 'cumpleanos5', 0, 1, 'cumpleanos/image5.png\r'),
-(6, 'cumpleanos6', 0, 1, 'cumpleanos/image6.png\r'),
-(7, 'amistad1', 0, 2, 'amistad/image1.png\r'),
-(8, 'amistad2', 0, 2, 'amistad/image2.png\r'),
-(9, 'amistad3', 0, 2, 'amistad/image3.png\r'),
-(10, 'amistad4', 0, 2, 'amistad/image4.png\r'),
-(11, 'amistad5', 0, 2, 'amistad/image5.png\r'),
-(12, 'amistad6', 0, 2, 'amistad/image6.png\r'),
-(13, 'amor1', 0, 3, 'amor/image1.png\r'),
-(14, 'amor2', 0, 3, 'amor/image2.png\r'),
-(15, 'amor3', 0, 3, 'amor/image3.png\r'),
-(16, 'amor4', 0, 3, 'amor/image4.png\r'),
-(17, 'amor5', 0, 3, 'amor/image5.png\r'),
-(18, 'amor6', 0, 3, 'amor/image6.png\r'),
-(19, 'saludos1', 0, 4, 'saludos/image1.png\r'),
-(20, 'saludos2', 0, 4, 'saludos/image2.png\r'),
-(21, 'saludos3', 0, 4, 'saludos/image3.png\r'),
-(22, 'saludos4', 0, 4, 'saludos/image4.png\r'),
-(23, 'saludos5', 0, 4, 'saludos/image5.png\r'),
-(24, 'saludos6', 0, 4, 'saludos/image6.png\r'),
-(25, 'invitacion1', 0, 5, 'invitacion/image1.png\r'),
-(26, 'invitacion2', 0, 5, 'invitacion/image2.png\r'),
-(27, 'invitacion3', 0, 5, 'invitacion/image3.png\r'),
-(28, 'invitacion4', 0, 5, 'invitacion/image4.png\r'),
-(29, 'invitacion5', 0, 5, 'invitacion/image5.png\r'),
-(30, 'invitacion6', 0, 5, 'invitacion/image6.png\r');
+(1, 'cumpleanos1', 0, 1, 'assets/img/postales/cumpleanos/image1.png\r'),
+(2, 'cumpleanos2', 0, 1, 'assets/img/postales/cumpleanos/image2.png\r'),
+(3, 'cumpleanos3', 0, 1, 'assets/img/postales/cumpleanos/image3.png\r'),
+(4, 'cumpleanos4', 0, 1, 'assets/img/postales/cumpleanos/image4.png\r'),
+(5, 'cumpleanos5', 0, 1, 'assets/img/postales/cumpleanos/image5.png\r'),
+(6, 'cumpleanos6', 0, 1, 'assets/img/postales/cumpleanos/image6.png\r'),
+(7, 'amistad1', 0, 2, 'assets/img/postales/amistad/image1.png\r'),
+(8, 'amistad2', 0, 2, 'assets/img/postales/amistad/image2.png\r'),
+(9, 'amistad3', 0, 2, 'assets/img/postales/amistad/image3.png\r'),
+(10, 'amistad4', 0, 2, 'assets/img/postales/amistad/image4.png\r'),
+(11, 'amistad5', 0, 2, 'assets/img/postales/amistad/image5.png\r'),
+(12, 'amistad6', 0, 2, 'assets/img/postales/amistad/image6.png\r'),
+(13, 'amor1', 0, 3, 'assets/img/postales/amor/image1.png\r'),
+(14, 'amor2', 0, 3, 'assets/img/postales/amor/image2.png\r'),
+(15, 'amor3', 0, 3, 'assets/img/postales/amor/image3.png\r'),
+(16, 'amor4', 0, 3, 'assets/img/postales/amor/image4.png\r'),
+(17, 'amor5', 0, 3, 'assets/img/postales/amor/image5.png\r'),
+(18, 'amor6', 0, 3, 'assets/img/postales/amor/image6.png\r'),
+(19, 'saludos1', 0, 4, 'assets/img/postales/saludos/image1.png\r'),
+(20, 'saludos2', 0, 4, 'assets/img/postales/saludos/image2.png\r'),
+(21, 'saludos3', 0, 4, 'assets/img/postales/saludos/image3.png\r'),
+(22, 'saludos4', 0, 4, 'assets/img/postales/saludos/image4.png\r'),
+(23, 'saludos5', 0, 4, 'assets/img/postales/saludos/image5.png\r'),
+(24, 'saludos6', 0, 4, 'assets/img/postales/saludos/image6.png\r'),
+(25, 'invitacion1', 0, 5, 'assets/img/postales/invitacion/image1.png\r'),
+(26, 'invitacion2', 0, 5, 'assets/img/postales/invitacion/image2.png\r'),
+(27, 'invitacion3', 0, 5, 'assets/img/postales/invitacion/image3.png\r'),
+(28, 'invitacion4', 0, 5, 'assets/img/postales/invitacion/image4.png\r'),
+(29, 'invitacion5', 0, 5, 'assets/img/postales/invitacion/image5.png\r'),
+(30, 'invitacion6', 0, 5, 'assets/img/postales/invitacion/image6.png\r');
 
 -- --------------------------------------------------------
 
@@ -155,6 +155,14 @@ CREATE TABLE `usuariopostal` (
   `fecha` datetime NOT NULL,
   `emailDestinatario` varchar(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `usuariopostal`
+--
+
+INSERT INTO `usuariopostal` (`email`, `idPostal`, `fecha`, `emailDestinatario`) VALUES
+('an.real@gmail.com', 3, '2019-01-26 00:00:00', 'rodrigoreal9@gmail.com'),
+('an.real@gmail.com', 9, '2019-09-27 00:00:00', 'karinagp@gmail.com');
 
 --
 -- Índices para tablas volcadas
@@ -214,7 +222,7 @@ ALTER TABLE `categoria`
 -- AUTO_INCREMENT de la tabla `postal`
 --
 ALTER TABLE `postal`
-  MODIFY `idPostal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `idPostal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT de la tabla `reporte`
