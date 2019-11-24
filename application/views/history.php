@@ -31,6 +31,8 @@
                     <h2 class="text-info">Historial de tus postales</h2>
                     <p>Las postales que has enviado son:</p>
                 </div>
+                
+                <form action="<?php base_url();?>descPostal" method="POST">
                 <div class="row justify-content-center table-responsive">
                     <table class="table table-info table-bordered">
                         <thead class="thead-dark text-sm-center">
@@ -39,6 +41,7 @@
                             <th scope="col">Fecha y Hora</th>
                             <th scope="col">Categoría</th>
                             <th scope="col">Postal</th>
+                            <th scope="col">Descargar</th>
                             </tr>
                         </thead>
                         <tbody class="text-sm-center">
@@ -50,6 +53,10 @@
                             <td class="align-middle"><?= $fila->fecha; ?></td>
                             <td class="align-middle"><?= $fila->nombre; ?></td>
                             <td class="align-middle w-25"><img src="<?= base_url().$fila->ruta; ?>" class="img-fluid rounded"></td>
+                            <td class="align-middle"><div class="col-sm" align="center" id="btnenv">
+                           <i class="fas fa-file-pdf fa-2x"></i><br>
+                            <button id="env" class="btn btn-primary" type="submit">Descarga tu postal</button>
+                             </div></td>
                             </tr>
                             <?php } ?>
                         </tbody>
@@ -58,6 +65,7 @@
                 <div class="block-heading" style="padding-top:30px;">
                     <p>Las postales que has recibido son:</p>
                 </div>
+              
                 <div class="row justify-content-center table-responsive">
                     <table class="table table-warning table-bordered">
                         <thead class="thead-dark text-sm-center">
@@ -66,6 +74,7 @@
                             <th scope="col">Fecha y Hora</th>
                             <th scope="col">Categoría</th>
                             <th scope="col">Postal</th>
+                            <th scope="col">Descargar</th>
                             </tr>
                         </thead>
                         <tbody class="text-sm-center">
@@ -77,6 +86,11 @@
                             <td class="align-middle"><?= $fila->fecha; ?></td>
                             <td class="align-middle"><?= $fila->nombre; ?></td>
                             <td class="align-middle w-25"><img src="<?= base_url().$fila->ruta; ?>" class="img-fluid rounded"></td>
+                            <td class="align-middle"><div class="col-sm" align="center" id="btnenv">
+                           <i class="fas fa-file-pdf fa-2x"></i><br>
+                            <button id="env" class="btn btn-primary" type="submit">Descarga tu postal</button>
+                             </div></td>
+                            
                             </tr>
                             <?php } ?>
                         </tbody>
@@ -84,4 +98,6 @@
                 </div>
             </div>
         </section>
+
+            </form> 
     </main>

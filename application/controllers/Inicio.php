@@ -124,20 +124,37 @@ class Inicio extends CI_Controller {
      $this->load->view('categoriaPostales');
      $this->load->view('footer/footer');
    }
-
-   public function enviarPostales($nombre_imagen){
+   public function crearPDF(){
+    $this->load->view('crearMPDF');
+   }
+   public function descargarPostales(){
     $dato = $this->session->userdata('login');
     $n = array('name' => $this->session->userdata('nombre'));
     $justName= explode(" ",$n["name"]);
     $n["name"] = $justName[0];
-    print_r("Hola este es el nombre ");
     if ($dato == 1 || $dato == 2) {
       if ($dato == 1) {
         $this->load->view('headers/headerActiveSesion',$n);
       } else $this->load->view('headers/headerAdmin');
     } else header("Location: ". base_url()."inicio"); # Si no estas logueado no puedes acceder al apartado postales
 
-      print_r($nombre_imagen);
+     $this->load->view('descargarPostal');
+     $this->load->view('footer/footer');
+   }
+
+
+   public function enviarPostales($nombre_imagen){
+    $dato = $this->session->userdata('login');
+    $n = array('name' => $this->session->userdata('nombre'));
+    $justName= explode(" ",$n["name"]);
+    $n["name"] = $justName[0];
+    print_r("Hola este es el nombre ".$nombre_imagen);
+    if ($dato == 1 || $dato == 2) {
+      if ($dato == 1) {
+        $this->load->view('headers/headerActiveSesion',$n);
+      } else $this->load->view('headers/headerAdmin');
+    } else header("Location: ". base_url()."inicio"); # Si no estas logueado no puedes acceder al apartado postales
+
       $array_urls = array(
         "amor1" => "assets/img/postales/amor/image1.png",
         "amor2" => "assets/img/postales/amor/image2.png",

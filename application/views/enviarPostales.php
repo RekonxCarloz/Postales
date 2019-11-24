@@ -15,7 +15,7 @@
             </div>
             <br>
 
-
+            
                 <div align="center" class="row">
                     <div class="col-md-4 col-lg-6 item">
                         <i id="iconoW" class="fab fa-whatsapp fa-5x green-text"></i> Número de WhatsApp:
@@ -51,11 +51,11 @@
 </script>
 
 <?php
-/*
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\Exception;
 
 if($_POST  ){
+    set_time_limit(300);
 
     require 'PHPMailer/Exception.php';
     require 'PHPMailer/PHPMailer.php';
@@ -69,14 +69,14 @@ if($_POST  ){
         $mail->isSMTP();                                            // Send using SMTP
         $mail->Host       = 'smtp.gmail.com';                    // Set the SMTP server to send through
         $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-        $mail->Username   = 'RRekon@hotmail.com';                     // SMTP username
-        $mail->Password   = '';                               // SMTP password
+        $mail->Username   = 'omar1cruz2714721@gmail.com';                     // SMTP username
+        $mail->Password   = 'fakiebigflip123';                               // SMTP password
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
         $mail->Port       = 587;                                    // TCP port to connect to
 
         //Recipients
-        $mail->setFrom('RRekon@hotmail.com', 'CarlosCobian');
-        $mail->addAddress($_POST["correo"], 'iPostal');     // Add a recipient
+        $mail->setFrom('omar1cruz2714721@gmail.com', 'OmarCruz271');
+        $mail->addAddress($_POST["correo"], 'Joe User');     // Add a recipient
         /*$mail->addAddress('ellen@example.com');               // Name is optional
         $mail->addReplyTo('info@example.com', 'Information');
         $mail->addCC('cc@example.com');
@@ -84,23 +84,23 @@ if($_POST  ){
 
         // Attachments
         $mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
-
+    */
      $imagenNuevo="";
     $r = str_split($imagen);
-    for($i=0; $i<count($r); $i++)
+    for($i=0; $i<count($r); $i++) 
         if($r[$i]=="/"){
-        $r[$i]="/ ";
+        $r[$i]="\ ";
         $r[$i]=trim($r[$i]);
         }
     foreach($r as $char){
         $imagenNuevo=$imagenNuevo.$char;
-
+        
     }
-
-
-
-        $mail->addAttachment(trim('').$imagenNuevo, 'iPostal.png');    // Optional name
-
+         
+    
+    
+        $mail->addAttachment(trim('C:\xampp\htdocs\Postales\ ').$imagenNuevo, 'iPostal.png');    // Optional name
+    
         // Content
         $mail->isHTML(true);                                  // Set email format to HTML
         $mail->Subject = 'Esta es una Postal de iPostal';
@@ -115,19 +115,17 @@ if($_POST  ){
 
 $b64image="data:image/png;base64,".base64_encode(file_get_contents(base_url().$imagen));
 //echo($imagen);
-*/
-if($_POST  ){
-  $b64image="data:image/png;base64,".base64_encode(file_get_contents(base_url().$imagen));
+
 $data = [
 
     'phone' => '52'.$_POST["whats"], // Receivers phone
     'body' =>  $b64image,
     'filename'=> "imagen",
-    'caption'=>'Tienes una nueva postal de: '.$name.".\n".$_POST["mensajeiPostal"] // Message
+    'caption'=>'Tienes una nueva postal de: '.$name.', en '.$_POST["correo"].", dale un vistazo!" // Message
 ];
 $json = json_encode($data); // Encode data to JSON
 // URL for request POST /message
-$url = 'https://eu64.chat-api.com/instance79963/sendFile?token=3ts3v9jagd6wimev';
+$url = 'https://api.chat-api.com/instance82140/sendFile?token=flmgkvrplzojpjlw';
 // Make a POST request
 $options = stream_context_create(['http' => [
         'method'  => 'POST',
