@@ -19,7 +19,10 @@
   <link rel="stylesheet" href="<?=base_url()?>assets/fontawesome/css/all.css">
   <link rel="stylesheet" href="<?=base_url()?>assets/confirm/dist/jquery-confirm.min.css">
   <link rel="stylesheet" href="<?=base_url()?>assets/css/enviarPostalCSS.css">
+  <link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/datatables/datatables.min.css">
+  <link rel="stylesheet" href="<?=base_url()?>assets/datatables/DataTables-1.10.20/css/dataTables.bootstrap4.min.css">
   <link href='http://fonts.googleapis.com/css?family=Economica:700,400italic' rel='stylesheet' type='text/css'>
+  <link rel="shortcut icon" href="#">
 
 
     <script src="<?=base_url()?>assets/js/jquery.min.js"></script>
@@ -33,6 +36,7 @@
     <script src="<?=base_url()?>assets/confirm/dist/jquery-confirm.min.js"></script>
     <script src="<?=base_url()?>assets/js/modernizr.custom.28468.js"></script>
     <script src="<?=base_url()?>assets/js/jquery.cslider.js"></script>
+    <script src="<?=base_url()?>assets/datatables/datatables.min.js"></script>
     <noscript>
 			<link rel="stylesheet" type="text/css" href="css/nojs.css" />
 		</noscript>
@@ -50,7 +54,7 @@
                     <li class="nav-item" role="presentation"><a class="nav-link" href="<?= base_url() ?>postales">Postales</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="<?= base_url() ?>about">Acerca de</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="<?= base_url() ?>contacto">Contáctanos</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="<?= base_url() ?>contacto">Administrador</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="<?= base_url() ?>administrador">Administrador</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="<?= base_url() ?>salir">Cerrar Sesi&oacute;n</a></li>
                 </ul>
             </div>

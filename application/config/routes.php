@@ -60,4 +60,5 @@ $route['registro'] = "Inicio/registro";
 $route['postales'] = "Inicio/postales";
 $route['enviarPostales/(:any)']="Inicio/enviarPostales/$1";
 $route['historial'] = "Inicio/historial";
+$route['gestion'] = "Administrador/gestion";
 $route['salir'] = "Inicio/cerrarSesion";
