@@ -1,5 +1,5 @@
 <?php
-function getPlantilla($image){
+function getPlantilla($imagen,$email,$nombre){
     $plantilla='   <!DOCTYPE html>
     <html lang="en">
       <head>
@@ -11,7 +11,7 @@ function getPlantilla($image){
         <header class="clearfix">
           <div id="logo">
           <h1>iPostal</h1>
-            <img src="C:/xampp/htdocs/Postales/'.$image.'">
+            <img src="C:/xampp/htdocs/Postales/'.$imagen.'">
           </div>
           
           <div id="company" class="clearfix">
@@ -22,8 +22,8 @@ function getPlantilla($image){
           </div>
           <div id="project">
             <div><span>PROJECT</span> Website development</div>
-            <div><span>CLIENTE</span> Omar</div>
-            <div><span>EMAIL</span> <a href="mailto:john@example.com">john@example.com</a></div>
+            <div><span>CLIENTE</span>'.$nombre.'</div>
+            <div><span>EMAIL</span> <a href="mailto:'.$email.'">'.$email.'</a></div>
             <div><span>FECHA</span> August 17, 2015</div>
           </div>
         </header>

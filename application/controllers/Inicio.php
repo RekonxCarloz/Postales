@@ -156,6 +156,8 @@ class Inicio extends CI_Controller {
 
     );
     $data = array();
+    $data["nombre"] = $this->session->userdata('nombre');
+    $data["email"] = $this->session->userdata('priv');
     $data["imagen"] = $array_urls[$nombre_imagen];
     $this->load->view('crearMPDF',$data);
    }
