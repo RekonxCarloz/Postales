@@ -124,10 +124,43 @@ class Inicio extends CI_Controller {
      $this->load->view('categoriaPostales');
      $this->load->view('footer/footer');
    }
-   public function crearPDF(){
-    $this->load->view('crearMPDF');
+   public function crearPDF($nombre_imagen){
+     echo($nombre_imagen);
+    $array_urls = array(
+      "amor1" => "assets/img/postales/amor/image1.png",
+      "amor2" => "assets/img/postales/amor/image2.png",
+      "amor3" => "assets/img/postales/amor/image3.png",
+      "amor4" => "assets/img/postales/amor/image4.png",
+      "amor5" => "assets/img/postales/amor/image5.png",
+      "amistad1" =>"assets/img/postales/amistad/image1.png",
+      "amistad2" =>"assets/img/postales/amistad/image2.png",
+      "amistad3" =>"assets/img/postales/amistad/image3.png",
+      "amistad4" =>"assets/img/postales/amistad/image4.png",
+      "amistad5" =>"assets/img/postales/amistad/image5.png",
+      "cumpleanos1" =>"assets/img/postales/cumpleanos/image1.png",
+      "cumpleanos2" =>"assets/img/postales/cumpleanos/image2.png",
+      "cumpleanos3" =>"assets/img/postales/cumpleanos/image3.png",
+      "cumpleanos4" =>"assets/img/postales/cumpleanos/image4.png",
+      "cumpleanos5" =>"assets/img/postales/cumpleanos/image5.png",
+      "invitacion1" =>"assets/img/postales/invitacion/image1.png",
+      "invitacion2" =>"assets/img/postales/invitacion/image2.png",
+      "invitacion3" =>"assets/img/postales/invitacion/image3.png",
+      "invitacion4" =>"assets/img/postales/invitacion/image4.png",
+      "invitacion5" =>"assets/img/postales/invitacion/image5.png",
+      "saludos1" =>"assets/img/postales/saludos/image1.png",
+      "saludos2" =>"assets/img/postales/saludos/image2.png",
+      "saludos3" =>"assets/img/postales/saludos/image3.png",
+      "saludos4" =>"assets/img/postales/saludos/image4.png",
+      "saludos5" =>"assets/img/postales/saludos/image5.png",
+
+
+    );
+    $data = array();
+    $data["imagen"] = $array_urls[$nombre_imagen];
+    $this->load->view('crearMPDF',$data);
    }
-   public function descargarPostales(){
+   public function descargarPostales($info){
+    
     $dato = $this->session->userdata('login');
     $n = array('name' => $this->session->userdata('nombre'));
     $justName= explode(" ",$n["name"]);
@@ -137,8 +170,11 @@ class Inicio extends CI_Controller {
         $this->load->view('headers/headerActiveSesion',$n);
       } else $this->load->view('headers/headerAdmin');
     } else header("Location: ". base_url()."inicio"); # Si no estas logueado no puedes acceder al apartado postales
-
-     $this->load->view('descargarPostal');
+    echo("esta es tu info: ");
+    $data = array();
+    $data["imagen"] =$info;
+    echo($info);
+     $this->load->view('descargarPostal', $data);
      $this->load->view('footer/footer');
    }
 

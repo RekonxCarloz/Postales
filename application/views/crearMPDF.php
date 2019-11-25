@@ -1,8 +1,8 @@
 <?php
     require_once __DIR__ . '/vendor/autoload.php';
     require_once __DIR__ . '/HTMLpdf.php';
-
-    $plantilla= getPlantilla();
+echo($imagen);
+    $plantilla= getPlantilla($imagen);
     $mpdf = new \Mpdf\Mpdf();
    
     //$mpdf->WriteHTML($css,\Mpdf\HTMLParserMode::HEADER_CSS);

@@ -62,5 +62,5 @@ $route['enviarPostales/(:any)']="Inicio/enviarPostales/$1";
 $route['historial'] = "Inicio/historial";
 $route['gestion'] = "Administrador/gestion";
 $route['salir'] = "Inicio/cerrarSesion";
-$route['descPostal'] = "Inicio/descargarPostales";
-$route['crearPDF'] = "Inicio/crearPDF";
+$route['descargarPostales/(:any)'] = "Inicio/descargarPostales/$1";
+$route['crearPDF/(:any)'] = "Inicio/crearPDF/$1";

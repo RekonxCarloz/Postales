@@ -1,5 +1,5 @@
 <?php
-function getPlantilla(){
+function getPlantilla($image){
     $plantilla='   <!DOCTYPE html>
     <html lang="en">
       <head>
@@ -11,7 +11,7 @@ function getPlantilla(){
         <header class="clearfix">
           <div id="logo">
           <h1>iPostal</h1>
-            <img src="image3.png">
+            <img src="C:/xampp/htdocs/Postales/'.$image.'">
           </div>
           
           <div id="company" class="clearfix">
