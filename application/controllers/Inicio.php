@@ -222,7 +222,7 @@ class Inicio extends CI_Controller {
       );
       $data = array();
       $data["imagen"] = $array_urls[$nombre_imagen];
-      $data["nombreP"]= $n;
+      $data["nombreP"]= $n["name"];
     $this->load->view('enviarPostales',$data);
     $this->load->view('footer/footer');
   }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-11-2019 a las 18:17:55
+-- Tiempo de generación: 25-11-2019 a las 17:10:56
 -- Versión del servidor: 10.4.8-MariaDB
 -- Versión de PHP: 7.3.10
 
@@ -139,9 +139,10 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`idUsuario`, `nombre`, `contrasena`, `email`, `celular`, `genero`, `fechaNac`, `privilegio`) VALUES
-(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'RRekon@hotmail.com', '5579101570', 'M', '1998-04-24', 1),
-(2, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'rodrigoreal9@gmail.com', '5529857787', 'm', '1998-08-22', 1),
-(5, 'Adrián García Real', '21232f297a57a5a743894a0e4a801fc3', 'an.real@gmail.com', '5529857787', 'm', '2019-11-19', 0);
+(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'RRekon@hotmail.com', '5579101570', 'm', '1998-04-24', 1),
+(2, 'Rodrigo García Real', '21232f297a57a5a743894a0e4a801fc3', 'rodrigoreal9@gmail.com', '5529857787', 'm', '1998-08-22', 1),
+(3, 'Adrián García Real', '21232f297a57a5a743894a0e4a801fc3', 'an.real@gmail.com', '5529857787', 'm', '2019-11-19', 0),
+(4, 'Karina González Pérez', '21232f297a57a5a743894a0e4a801fc3', 'karinagp@hotmail.com', '5529857787', 'f', '1999-11-14', 0);
 
 -- --------------------------------------------------------
 
@@ -162,7 +163,9 @@ CREATE TABLE `usuariopostal` (
 
 INSERT INTO `usuariopostal` (`email`, `idPostal`, `fecha`, `emailDestinatario`) VALUES
 ('an.real@gmail.com', 3, '2019-01-26 00:00:00', 'rodrigoreal9@gmail.com'),
-('an.real@gmail.com', 9, '2019-09-27 00:00:00', 'karinagp@gmail.com');
+('RRekon@hotmail.com', 17, '2019-02-13 08:00:00', 'an.real@gmail.com'),
+('rodrigoreal9@gmail.com', 7, '2019-07-27 19:00:00', 'an.real@gmail.com'),
+('an.real@gmail.com', 17, '2019-11-26 00:00:00', 'karinagp@hotmail.com');
 
 --
 -- Índices para tablas volcadas
@@ -234,7 +237,7 @@ ALTER TABLE `reporte`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Restricciones para tablas volcadas

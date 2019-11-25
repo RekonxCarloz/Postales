@@ -121,7 +121,7 @@ $data = [
     'phone' => '52'.$_POST["whats"], // Receivers phone
     'body' =>  $b64image,
     'filename'=> "imagen",
-    'caption'=>'Tienes una nueva postal de: '.$name.', en '.$_POST["correo"].", dale un vistazo!" // Message
+    'caption'=>'Tienes una nueva postal de: '.$nombreP.', en '.$_POST["correo"].", dale un vistazo!" // Message
 ];
 $json = json_encode($data); // Encode data to JSON
 // URL for request POST /message
