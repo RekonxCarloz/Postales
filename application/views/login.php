@@ -10,7 +10,6 @@
                     <div class="form-group"><label for="email">Email</label><input class="form-control item" type="email" id="email" name="email" data-validetta="required,email,maxLength[32]"></div>
                     <div class="form-group"><label for="password">Contraseña</label><input class="form-control" type="password" id="password" name="contrasena" data-validetta="required,minLength[5],maxLength[32]"></div>
                     <div class="form-group">
-                        <div class="form-check"><input class="form-check-input" type="checkbox" id="checkbox" name="sesionIniciada" value="1"><label class="form-check-label" for="checkbox">Mantener iniciada la sesión</label></div>
                     </div><button class="btn btn-primary btn-block" type="submit">Iniciar sesión</button>
                 </form>
             </div>

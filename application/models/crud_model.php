@@ -10,20 +10,19 @@
         public $idTabla = "idUsuario";
         
         public function findAll() { 
-            $this->db->select();
-            $this->db->form($this->tabla);
             # SELECT * FROM usuario;
-            $query = $this->db->get();
-            return $query->result(); #Retorna la matriz de resultados
+            $query = $this->db->get($this->tabla);
+            if ($query->num_rows() > 0) {
+                return $query;
+            } else {
+                return null;
+            }
         }
 
         public function find($id) {
             
-            $this->db->select();
-            $this->db->from($this->tabla);
-            $this->db->where($this->idTabla,$id);
             # SELECT * FROM usuario WHERE idUsuario = $id;
-            $query = $this->db->get();
+            $query = $this->db->get_where($this->tabla,array('idUsuario' => $id));
             return $query->row(); # Retorna solo la fila obtenida
         }
 
