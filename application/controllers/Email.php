@@ -23,16 +23,16 @@ class Email extends CI_Controller{
         $mail->isSMTP();
         $mail->Host     = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
-        $mail->Username = 'rodrigoreal9@gmail.com';
-        $mail->Password = '';
+        $mail->Username = 'ipostalcontacto@gmail.com';
+        $mail->Password = 'contacto123';
         $mail->SMTPSecure = 'TLS';
         $mail->Port     = 587;
         
-        $mail->setFrom('rodrigoreal9@gmail.com', 'Rodrigo Real');
+        $mail->setFrom('ipostalcontacto@gmail.com', 'Web iPostal');
         //$mail->addReplyTo('info@example.com', 'Programacion.net');
         
         // Add a recipient
-        $mail->addAddress($_POST["correo"], 'Joe User');
+        $mail->addAddress($_POST["correo"], '');
         
         // Add cc or bcc 
         /*$mail->addCC('cc@example.com');
@@ -52,7 +52,7 @@ class Email extends CI_Controller{
         // Email body content
         $mailContent = '<b>FELICIDADES ESTA ES TU POSTAL</b>: <br>'.$_POST["mensaje"];
         $mail->Body = $mailContent;
-
+        // Se hace el registro en la tabla usuariopostal a continuacion
         $query = $this->envios_model->ruta($_POST['imagenNombre']);
         $query = $query->row();
         $idImagen = $query->idPostal; # Guarda el id de la imagen que se va a ennviar

@@ -38,7 +38,7 @@
             <div class="row" id="images">
               <div class="col-md-6 col-lg-4 item filterDiv amistad"><a class="lightbox" href="<?=base_url();?>enviarPostales/amistad1"><img  class="img-thumbnail img-fluid image" id="img1" src="assets/img/postales/amistad/image1.png"></a></div>
               <div class="col-md-6 col-lg-4 item filterDiv amor"><a class="lightbox" href="<?=base_url();?>enviarPostales/amor1"><img class="img-thumbnail img-fluid image" src="assets/img/postales/amor/image1.png"></a></div>
-              <div class="col-md-6 col-lg-4 item filterDiv cumpleanos"><a class="lightbox" href="<?=base_url();?>enviarPostales/cumpleanos1""><img class="img-thumbnail img-fluid image" src="assets/img/postales/cumpleanos/image1.png"></a></div>
+              <div class="col-md-6 col-lg-4 item filterDiv cumpleanos"><a class="lightbox" href="<?=base_url();?>enviarPostales/cumpleanos1"><img class="img-thumbnail img-fluid image" src="assets/img/postales/cumpleanos/image1.png"></a></div>
               <div class="col-md-6 col-lg-4 item filterDiv invitacion"><a class="lightbox" href="<?=base_url();?>enviarPostales/invitacion1"><img class="img-thumbnail img-fluid image" src="assets/img/postales/invitacion/image1.png"></a></div>
               <div class="col-md-6 col-lg-4 item filterDiv saludos"><a class="lightbox" href="<?=base_url();?>enviarPostales/saludos1"><img class="img-thumbnail img-fluid image" src="assets/img/postales/saludos/image1.png"></a></div>
               <div class="col-md-6 col-lg-4 item filterDiv amistad"><a class="lightbox" href="<?=base_url();?>enviarPostales/amistad2"><img  class="img-thumbnail img-fluid image" id="img1" src="assets/img/postales/amistad/image2.png"></a></div>
@@ -61,6 +61,11 @@
               <div class="col-md-6 col-lg-4 item filterDiv cumpleanos"><a class="lightbox" href="<?=base_url();?>enviarPostales/cumpleanos5"><img class="img-thumbnail img-fluid image" src="assets/img/postales/cumpleanos/image5.png"></a></div>
               <div class="col-md-6 col-lg-4 item filterDiv invitacion"><a class="lightbox" href="<?=base_url();?>enviarPostales/invitacion5"><img class="img-thumbnail img-fluid image" src="assets/img/postales/invitacion/image5.png"></a></div>
               <div class="col-md-6 col-lg-4 item filterDiv saludos"><a class="lightbox" href="<?=base_url();?>enviarPostales/saludos5"><img class="img-thumbnail img-fluid image" src="assets/img/postales/saludos/image5.png"></a></div>
+              <div class="col-md-6 col-lg-4 item filterDiv amistad"><a class="lightbox" href="<?=base_url();?>enviarPostales/amistad6"><img  class="img-thumbnail img-fluid image" id="img1" src="assets/img/postales/amistad/image6.png"></a></div>
+              <div class="col-md-6 col-lg-4 item filterDiv amor"><a class="lightbox" href="<?=base_url();?>enviarPostales/amor6"><img class="img-thumbnail img-fluid image" src="assets/img/postales/amor/image6.png"></a></div>
+              <div class="col-md-6 col-lg-4 item filterDiv cumpleanos"><a class="lightbox" href="<?=base_url();?>enviarPostales/cumpleanos6"><img class="img-thumbnail img-fluid image" src="assets/img/postales/cumpleanos/image6.png"></a></div>
+              <div class="col-md-6 col-lg-4 item filterDiv invitacion"><a class="lightbox" href="<?=base_url();?>enviarPostales/invitacion6"><img class="img-thumbnail img-fluid image" src="assets/img/postales/invitacion/image6.png"></a></div>
+              <div class="col-md-6 col-lg-4 item filterDiv saludos"><a class="lightbox" href="<?=base_url();?>enviarPostales/saludos6"><img class="img-thumbnail img-fluid image" src="assets/img/postales/saludos/image6.png"></a></div>
 
             </div>
         </div>

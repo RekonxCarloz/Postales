@@ -7,31 +7,33 @@
                 <h2 class="text-info">¡Redacta tu mensaje!</h2>
             </div>
                 <textarea id="mensajePostal" name="mensajeiPostal"></textarea>
-            <div class="row">
-                <div class="col-sm">
+                <div class="row">
+                    <div class="col-sm">
                     <br>
                     <img class="img-thumbnail img-fluid image" id="img1" src="<?=base_url().$imagen?>">
                 </div>
             </div>
             <br>
-
             
-                <div align="center" class="row">
-                    <div class="col-md-4 col-lg-6 item">
-                        <i id="iconoW" class="fab fa-whatsapp fa-5x green-text"></i> Número de WhatsApp:
-                        <input id="whats" name="whats" type="tel">
-                    </div>
-                    <div class="col-md-4 col-lg-6 item">
-                        <i id="iconoM" class="fas fa-envelope-square fa-5x red-text"></i> Mail:
-                        <input id="correo" name="correo" type="text">
-                    </div>
+            
+            <div align="center" class="row">
+                <div class="col-md-4 col-lg-6 item">
+                    <i id="iconoW" class="fab fa-whatsapp fa-5x green-text"></i> Número de WhatsApp:
+                    <input id="whats" name="whats" type="tel">
                 </div>
-                <div class="row">
-                    <div class="col-sm" align="center" id="btnenv">
-                        <button id="env" class="btn btn-primary" type="submit">Enviar</button>
-                    </div>
+                <div class="col-md-4 col-lg-6 item">
+                    <i id="iconoM" class="fas fa-envelope-square fa-5x red-text"></i> Mail:
+                    <input id="correo" name="correo" type="text">
                 </div>
-            </form>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 btn-group justify-content-center" id="btnenv">
+                    <button id="env" class="btn btn-primary" type="submit">Enviar</button>
+                    <button class="btn btn-warning" type="button" id="btnPuntuarPostal">Me gusta ésta Postal</button>
+                    <button class="btn btn-dark" type="button" id="btnPuntuarCategoria">Me gusta ésta Categoría</button>
+                </div>
+            </div>
+        </form>
 
         </div>
     </section>
@@ -47,7 +49,63 @@
       delay: 1000,
     }
   });
-  
+  // Boton puntuar postal
+  $(document).on("click", "#btnPuntuarPostal", function(){   
+    ruta = jQuery(location).attr('href'); // Se guarda la ruta actual de donde esta la ventana
+    imagenNombre = ruta.replace(/^.*[\\\/]/, ''); // Se limpia la ruta y se guarda lo que esta despues del ultimo '/'
+    $.ajax({
+        url: "<?=base_url()?>PuntuacionAjax/postal",
+        type: "POST",
+        dataType: "json",
+        data: {imagenNombre:imagenNombre},
+        success: function(AX){  
+            var tipoAlerts = new Array("red","green");
+            $.alert({
+                title:AX.title,
+                icon: AX.icon,
+                content:AX.msj,
+                type:tipoAlerts[AX.val],
+                onDestroy:function(){
+                    if(AX.val == 1){ //Si se pudo puntuar entonces desabilita el boton y cambia el texto
+                        $('#btnPuntuarPostal').prop('disabled',true);
+                        $('#btnPuntuarPostal').prop('class','btn btn-success');
+                        $('#btnPuntuarPostal').text("Gracias por puntuar");
+                    }
+                }
+            });
+        }        
+    });
+  });
+
+ // Boton puntuar categoria
+ $(document).on("click", "#btnPuntuarCategoria", function(){   
+    ruta = jQuery(location).attr('href'); // Se guarda la ruta actual de donde esta la ventana
+    imagenNombre = ruta.replace(/^.*[\\\/]/, ''); // Se limpia la ruta y se guarda lo que esta despues del ultimo '/'
+    $.ajax({
+        url: "<?=base_url()?>PuntuacionAjax/categoria",
+        type: "POST",
+        dataType: "json",
+        data: {imagenNombre:imagenNombre},
+        success: function(AX){  
+            var tipoAlerts = new Array("red","green");
+            $.alert({
+                title:AX.title,
+                icon: AX.icon,
+                content:AX.msj,
+                type:tipoAlerts[AX.val],
+                onDestroy:function(){
+                    if(AX.val == 1){ //Si se pudo puntuar entonces desabilita el boton y cambia el texto
+                        $('#btnPuntuarCategoria').prop('disabled',true);
+                        $('#btnPuntuarCategoria').prop('class','btn btn-success');
+                        $('#btnPuntuarCategoria').text("Gracias por puntuar");
+                    }
+                }
+            });
+        }        
+    });
+  });
+
+  // Formulario para enviar email
   $("#formMail").submit(function(e){
     e.preventDefault();    
     mensaje = $("#mensajePostal").val();
@@ -62,11 +120,6 @@
         dataType: "json",
         data: {mensaje:mensaje, correo:correo, whats:whats, imagen:imagen,imagenNombre:imagenNombre},
         success: function(AX){  
-            /*var data = JSON.parse(AX);
-            console.log(data);
-            mensaje = data.mensaje;
-            correo = data.correo;
-            whats = data.whats;*/
             var tipoAlerts = new Array("red","green");
             $.alert({
                 title:AX.title,
