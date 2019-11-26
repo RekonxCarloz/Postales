@@ -52,5 +52,9 @@
                 echo "Error";
             }
         }
+
+        public function prueba() {
+            echo ("Hola Mundo");
+        }
     }
 ?>

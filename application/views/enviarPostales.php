@@ -3,7 +3,7 @@
     <section class="clean-block clean-gallery dark">
         <div class="container">
             <div class="block-heading" style="padding-top: 140px;">
-            <form action="" method="POST">
+            <form id="formMail">
                 <h2 class="text-info">¡Redacta tu mensaje!</h2>
             </div>
                 <textarea id="mensajePostal" name="mensajeiPostal"></textarea>
@@ -23,7 +23,7 @@
                     </div>
                     <div class="col-md-4 col-lg-6 item">
                         <i id="iconoM" class="fas fa-envelope-square fa-5x red-text"></i> Mail:
-                        <input id="mensaje" name="correo" type="text">
+                        <input id="correo" name="correo" type="text">
                     </div>
                 </div>
                 <div class="row">
@@ -47,6 +47,40 @@
       delay: 1000,
     }
   });
+  
+  $("#formMail").submit(function(e){
+    e.preventDefault();    
+    mensaje = $("#mensajePostal").val();
+    correo = $.trim($("#correo").val());
+    whats = $.trim($("#whats").val());
+    ruta = jQuery(location).attr('href'); // Se guarda la ruta actual de donde esta la ventana
+    imagenNombre = ruta.replace(/^.*[\\\/]/, ''); // Se limpia la ruta y se guarda lo que esta despues del ultimo '/'
+    imagen = $('#img1').attr('src');
+    $.ajax({
+        url: "<?=base_url()?>Email/send",
+        type: "POST",
+        dataType: "json",
+        data: {mensaje:mensaje, correo:correo, whats:whats, imagen:imagen,imagenNombre:imagenNombre},
+        success: function(AX){  
+            /*var data = JSON.parse(AX);
+            console.log(data);
+            mensaje = data.mensaje;
+            correo = data.correo;
+            whats = data.whats;*/
+            var tipoAlerts = new Array("red","green");
+            $.alert({
+                title:AX.title,
+                icon: AX.icon,
+                content:AX.msj,
+                type:tipoAlerts[AX.val],
+                onDestroy:function(){
+                    $("#formMail")[0].reset();
+                }
+            });
+        }        
+    });
+    
+});  
 
 </script>
 
@@ -69,13 +103,13 @@ if($_POST  ){
         $mail->isSMTP();                                            // Send using SMTP
         $mail->Host       = 'smtp.gmail.com';                    // Set the SMTP server to send through
         $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-        $mail->Username   = 'omar1cruz2714721@gmail.com';                     // SMTP username
-        $mail->Password   = 'fakiebigflip123';                               // SMTP password
+        $mail->Username   = 'rodrigoreal9@gmail.com';                     // SMTP username
+        $mail->Password   = '';                               // SMTP password
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
         $mail->Port       = 587;                                    // TCP port to connect to
 
         //Recipients
-        $mail->setFrom('omar1cruz2714721@gmail.com', 'OmarCruz271');
+        $mail->setFrom('rodrigoreal9@gmail.com', 'Rodrigo Real');
         $mail->addAddress($_POST["correo"], 'Joe User');     // Add a recipient
         /*$mail->addAddress('ellen@example.com');               // Name is optional
         $mail->addReplyTo('info@example.com', 'Information');
@@ -85,7 +119,7 @@ if($_POST  ){
         // Attachments
         $mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
     */
-     $imagenNuevo="";
+    $imagenNuevo="";
     $r = str_split($imagen);
     for($i=0; $i<count($r); $i++) 
         if($r[$i]=="/"){
@@ -113,7 +147,7 @@ if($_POST  ){
         echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     }
 
-$b64image="data:image/png;base64,".base64_encode(file_get_contents(base_url().$imagen));
+/*$b64image="data:image/png;base64,".base64_encode(file_get_contents(base_url().$imagen));
 //echo($imagen);
 
 $data = [
@@ -135,6 +169,6 @@ $options = stream_context_create(['http' => [
     ]
 ]);
 $result = file_get_contents($url, false, $options);
-
+*/
 }
 ?>
