@@ -24,7 +24,6 @@
     use PHPMailer\PHPMailer\Exception;
 
 if($_POST  ){
-    set_time_limit(300);
 
     require 'PHPMailer/Exception.php';
     require 'PHPMailer/PHPMailer.php';
@@ -60,7 +59,7 @@ if($_POST  ){
     }
 
 
-
+}
 
 
  ?>
