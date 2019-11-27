@@ -3,7 +3,7 @@
     <section class="clean-block clean-hero" style="background-image:url(&quot;assets/img/scenery/chart.jpg&quot;);color:rgba(236, 255, 216,.2);">
         <div class="text">
             <h2>Bienvenido Administrador.</h2>
-            <p>Revisa el reporte actual de las postales.</p><a class="btn btn-outline-primary" href="<?php base_url(); ?>postales">Ver reporte</a></div>
+            <p>Revisa el reporte actual de las postales.</p><a class="btn btn-outline-primary" href="<?php base_url(); ?>administrador">Ver reporte</a></div>
     </section>
     <section class="clean-block features">
         <div class="container">

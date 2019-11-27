@@ -39,6 +39,7 @@
     <script src="<?=base_url()?>assets/js/jquery.cslider.js"></script>
     <script src="<?=base_url()?>assets/datatables/datatables.min.js"></script>
     <script src="<?=base_url()?>assets/js/jquery.thumbs.js"></script>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
     <noscript>
 			<link rel="stylesheet" type="text/css" href="css/nojs.css" />
 		</noscript>
