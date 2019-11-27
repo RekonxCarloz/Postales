@@ -15,7 +15,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="table-responsive">
-                        <table id="tablaPersonas" class="table table-striped table-bordered table-condensed" style="width:100%">
+                        <table id="tablaPersonas" class="table table-striped table table-condensed" style="width:100%">
                             <thead class="text-sm-center">
                                 <tr>
                                     <th scope="row" class="align-middle">Id</th>
@@ -33,15 +33,14 @@
                                     if($tabla != null)
                                             foreach ($tabla->result() as $fila) { ?>
                                             <tr>
-                                                <th scope="row" class="align-middle"><?=$fila->idUsuario;?></td>
+                                                <td class="align-middle"><?=$fila->idUsuario;?></td>
                                                 <td class="align-middle"><?=$fila->nombre;?></td>
                                                 <td class="align-middle"><?=$fila->email;?></td>
                                                 <td class="align-middle"><?=$fila->celular;?></td>
                                                 <td class="align-middle"><?=$fila->genero = ($fila->genero == 'm')?"Masculino":"Femenino";?></td>
                                                 <td class="align-middle"><?=$fila->fechaNac;?></td>
                                                 <td class="align-middle"><?=$fila->privilegio = ($fila->privilegio == 1)?"Administrador":"Usuario";?></td>
-                                                <td class="align-middle">
-                                                </td>
+                                                <td class="align-middle"></td>
                                             </tr>
                                     <?php } ?>
                             </tbody>

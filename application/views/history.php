@@ -41,7 +41,7 @@
                             <th scope="col">Fecha y Hora</th>
                             <th scope="col">Categoría</th>
                             <th scope="col">Postal</th>
-                            <th scope="col">Descargar</th>
+                            <th scope="col">Acción</th>
                             </tr>
                         </thead>
                         <tbody class="text-sm-center">
@@ -99,7 +99,7 @@
                             <th scope="col">Fecha y Hora</th>
                             <th scope="col">Categoría</th>
                             <th scope="col">Postal</th>
-                            <th scope="col">Descargar</th>
+                            <th scope="col">Acción</th>
                             </tr>
                         </thead>
                         <tbody class="text-sm-center">
