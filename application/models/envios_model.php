@@ -54,7 +54,7 @@
         # Las siguientes consultas son para el controlador Email
 
         public function ruta($nombre) {
-            $query = $this->db->get_where('postal', array('nombre' => $nombre ));
+            $query = $this->db->get_where('postal', array('nombre' => $nombre )); //Me da una fila de la postal
             if ($query->num_rows() > 0) {
                 return $query;
             } else {

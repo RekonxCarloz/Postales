@@ -256,7 +256,7 @@ class Inicio extends CI_Controller {
                 $this->load->view('history',$data);
                 $this->load->view('footer/footer');
             }
-        } else header("Location: ". base_url()."inicio");
+        } else header("Location: ". base_url()."registro");
   }
 
   public function cerrarSesion() {
