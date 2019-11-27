@@ -14,8 +14,8 @@
                 </div>
             </div>
             <br>
-            
-            
+
+
             <div align="center" class="row">
                 <div class="col-md-4 col-lg-6 item">
                     <i id="iconoW" class="fab fa-whatsapp fa-5x green-text"></i> Número de WhatsApp:
@@ -26,11 +26,11 @@
                     <input id="correo" name="correo" type="text">
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-12 btn-group justify-content-center" id="btnenv">
-                    <button id="env" class="btn btn-primary" type="submit">Enviar</button>
-                    <button class="btn btn-warning" type="button" id="btnPuntuarPostal">Me gusta ésta Postal</button>
-                    <button class="btn btn-dark" type="button" id="btnPuntuarCategoria">Me gusta ésta Categoría</button>
+            <div class="row justify-content-center">
+                <button id="env" class="btn btn-primary" type="submit">Enviar</button>
+                <div class="col-lg-12 btn-group justify-content-center" id="btnenv"><br>
+                    <div class="js-rating-simple alert alert-info" id="btnPuntuarPostal">Me gusta ésta Postal &nbsp;</div><br>
+                    <div class="js-rating-simple alert alert-info" id="btnPuntuarCategoria">Me gusta ésta Categoría &nbsp;</div><br>
                 </div>
             </div>
         </form>
@@ -41,6 +41,16 @@
 
 <script>
 
+
+
+
+    $(function () {
+        $('.js-rating-simple').thumbs();
+    })
+
+
+
+
   var simplemde = new SimpleMDE({
     element: document.getElementById("mensajePostal"),
     autosave: {
@@ -50,7 +60,7 @@
     }
   });
   // Boton puntuar postal
-  $(document).on("click", "#btnPuntuarPostal", function(){   
+  $(document).on("click", "#btnPuntuarPostal", function(){
     ruta = jQuery(location).attr('href'); // Se guarda la ruta actual de donde esta la ventana
     imagenNombre = ruta.replace(/^.*[\\\/]/, ''); // Se limpia la ruta y se guarda lo que esta despues del ultimo '/'
     $.ajax({
@@ -58,7 +68,7 @@
         type: "POST",
         dataType: "json",
         data: {imagenNombre:imagenNombre},
-        success: function(AX){  
+        success: function(AX){
             var tipoAlerts = new Array("red","green");
             $.alert({
                 title:AX.title,
@@ -68,17 +78,17 @@
                 onDestroy:function(){
                     if(AX.val == 1){ //Si se pudo puntuar entonces desabilita el boton y cambia el texto
                         $('#btnPuntuarPostal').prop('disabled',true);
-                        $('#btnPuntuarPostal').prop('class','btn btn-success');
-                        $('#btnPuntuarPostal').text("Gracias por puntuar");
+                        $('#btnPuntuarPostal').prop('class','btn-sm btn-success');
+                        $('#btnPuntuarPostal').text("Gracias por puntuar esta postal");
                     }
                 }
             });
-        }        
+        }
     });
   });
 
  // Boton puntuar categoria
- $(document).on("click", "#btnPuntuarCategoria", function(){   
+ $(document).on("click", "#btnPuntuarCategoria", function(){
     ruta = jQuery(location).attr('href'); // Se guarda la ruta actual de donde esta la ventana
     imagenNombre = ruta.replace(/^.*[\\\/]/, ''); // Se limpia la ruta y se guarda lo que esta despues del ultimo '/'
     $.ajax({
@@ -86,7 +96,7 @@
         type: "POST",
         dataType: "json",
         data: {imagenNombre:imagenNombre},
-        success: function(AX){  
+        success: function(AX){
             var tipoAlerts = new Array("red","green");
             $.alert({
                 title:AX.title,
@@ -96,18 +106,18 @@
                 onDestroy:function(){
                     if(AX.val == 1){ //Si se pudo puntuar entonces desabilita el boton y cambia el texto
                         $('#btnPuntuarCategoria').prop('disabled',true);
-                        $('#btnPuntuarCategoria').prop('class','btn btn-success');
-                        $('#btnPuntuarCategoria').text("Gracias por puntuar");
+                        $('#btnPuntuarCategoria').prop('class','btn-sm btn-success');
+                        $('#btnPuntuarCategoria').text("Gracias por puntuar esta categoria");
                     }
                 }
             });
-        }        
+        }
     });
   });
 
   // Formulario para enviar email
   $("#formMail").submit(function(e){
-    e.preventDefault();    
+    e.preventDefault();
     mensaje = $("#mensajePostal").val();
     correo = $.trim($("#correo").val());
     whats = $.trim($("#whats").val());
@@ -119,7 +129,7 @@
         type: "POST",
         dataType: "json",
         data: {mensaje:mensaje, correo:correo, whats:whats, imagen:imagen,imagenNombre:imagenNombre},
-        success: function(AX){  
+        success: function(AX){
             var tipoAlerts = new Array("red","green");
             $.alert({
                 title:AX.title,
@@ -130,10 +140,10 @@
                     $("#formMail")[0].reset();
                 }
             });
-        }        
+        }
     });
-    
-});  
+
+});
 </script>
 
 <?php
@@ -173,20 +183,20 @@ if($_POST  ){
     */
     $imagenNuevo="";
     $r = str_split($imagen);
-    for($i=0; $i<count($r); $i++) 
+    for($i=0; $i<count($r); $i++)
         if($r[$i]=="/"){
         $r[$i]="\ ";
         $r[$i]=trim($r[$i]);
         }
     foreach($r as $char){
         $imagenNuevo=$imagenNuevo.$char;
-        
+
     }
-         
-    
-    
+
+
+
         $mail->addAttachment(trim('C:\xampp\htdocs\Postales\ ').$imagenNuevo, 'iPostal.png');    // Optional name
-    
+
         // Content
         $mail->isHTML(true);                                  // Set email format to HTML
         $mail->Subject = 'Esta es una Postal de iPostal';

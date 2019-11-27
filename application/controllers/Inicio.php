@@ -91,22 +91,24 @@ class Inicio extends CI_Controller {
 
    public function contacto(){
     $dato = $this->session->userdata('login');
-    $n = array('name' => $this->session->userdata('nombre'));
+    $n = array('name' => $this->session->userdata('nombre'),
+    'nombreCompleto' => $this->session->userdata('nombre'),
+    'email' => $this->session->userdata('priv'));
     $justName= explode(" ",$n["name"]);
     $n["name"] = $justName[0];
     if ($dato == 1 || $dato == 2) {
       if ($dato == 1) {
         $this->load->view('headers/headerActiveSesion',$n);
-        $this->load->view('contact-us');
+        $this->load->view('contact-us', $n);
         $this->load->view('footer/footer');
       } else {
         $this->load->view('headers/headerAdmin');
-        $this->load->view('contact-us');
+        $this->load->view('contact-us', $n);
         $this->load->view('footer/footer');
       }
     } else {
       $this->load->view('headers/header');
-      $this->load->view('contact-us');
+      $this->load->view('contact-us', $n);
       $this->load->view('footer/footer');
     }
    }
@@ -162,7 +164,7 @@ class Inicio extends CI_Controller {
     $this->load->view('crearMPDF',$data);
    }
    public function descargarPostales($info){
-    
+
     $dato = $this->session->userdata('login');
     $n = array('name' => $this->session->userdata('nombre'));
     $justName= explode(" ",$n["name"]);
@@ -235,7 +237,7 @@ class Inicio extends CI_Controller {
   }
 
   public function historial() {
-    
+
     $this->load->model('envios_model');
     $data['datos'] = $this->envios_model->getDatos(); # Aqui guarda la consulta de los datos de usuario
     $data['enviadas'] = $this->envios_model->getEnviadas(); # Aqui guarda la consulta de las postales enviadas

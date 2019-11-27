@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="<?=base_url()?>assets/datatables/DataTables-1.10.20/css/dataTables.bootstrap4.min.css">
   <link href='http://fonts.googleapis.com/css?family=Economica:700,400italic' rel='stylesheet' type='text/css'>
   <link rel="shortcut icon" href="#">
+  <link rel="stylesheet" href="<?=base_url()?>assets/css/jquery.thumbs.css">
 
 
     <script src="<?=base_url()?>assets/js/jquery.min.js"></script>
@@ -37,6 +38,7 @@
     <script src="<?=base_url()?>assets/js/modernizr.custom.28468.js"></script>
     <script src="<?=base_url()?>assets/js/jquery.cslider.js"></script>
     <script src="<?=base_url()?>assets/datatables/datatables.min.js"></script>
+    <script src="<?=base_url()?>assets/js/jquery.thumbs.js"></script>
     <noscript>
 			<link rel="stylesheet" type="text/css" href="css/nojs.css" />
 		</noscript>
