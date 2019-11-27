@@ -56,6 +56,7 @@ $route['caracteristicas'] = "Inicio/caracteristicas";
 $route['about'] = "Inicio/about";
 $route['login'] = "Inicio/login";
 $route['contacto'] = "Inicio/contacto";
+$route['reporte'] = "Inicio/reporte";
 $route['registro'] = "Inicio/registro";
 $route['postales'] = "Inicio/postales";
 $route['enviarPostales/(:any)']="Inicio/enviarPostales/$1";
