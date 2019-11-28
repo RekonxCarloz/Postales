@@ -127,40 +127,19 @@ class Inicio extends CI_Controller {
      $this->load->view('footer/footer');
    }
    public function crearPDF($nombre_imagen){
-     echo($nombre_imagen);
-    $array_urls = array(
-      "amor1" => "assets/img/postales/amor/image1.png",
-      "amor2" => "assets/img/postales/amor/image2.png",
-      "amor3" => "assets/img/postales/amor/image3.png",
-      "amor4" => "assets/img/postales/amor/image4.png",
-      "amor5" => "assets/img/postales/amor/image5.png",
-      "amistad1" =>"assets/img/postales/amistad/image1.png",
-      "amistad2" =>"assets/img/postales/amistad/image2.png",
-      "amistad3" =>"assets/img/postales/amistad/image3.png",
-      "amistad4" =>"assets/img/postales/amistad/image4.png",
-      "amistad5" =>"assets/img/postales/amistad/image5.png",
-      "cumpleanos1" =>"assets/img/postales/cumpleanos/image1.png",
-      "cumpleanos2" =>"assets/img/postales/cumpleanos/image2.png",
-      "cumpleanos3" =>"assets/img/postales/cumpleanos/image3.png",
-      "cumpleanos4" =>"assets/img/postales/cumpleanos/image4.png",
-      "cumpleanos5" =>"assets/img/postales/cumpleanos/image5.png",
-      "invitacion1" =>"assets/img/postales/invitacion/image1.png",
-      "invitacion2" =>"assets/img/postales/invitacion/image2.png",
-      "invitacion3" =>"assets/img/postales/invitacion/image3.png",
-      "invitacion4" =>"assets/img/postales/invitacion/image4.png",
-      "invitacion5" =>"assets/img/postales/invitacion/image5.png",
-      "saludos1" =>"assets/img/postales/saludos/image1.png",
-      "saludos2" =>"assets/img/postales/saludos/image2.png",
-      "saludos3" =>"assets/img/postales/saludos/image3.png",
-      "saludos4" =>"assets/img/postales/saludos/image4.png",
-      "saludos5" =>"assets/img/postales/saludos/image5.png",
 
-
-    );
+    $this->load->model('envios_model');
+    $query = $this->envios_model->ruta($nombre_imagen);
+    $query = $query->row(); //Traemos todos los datos de el nombre de la imagen
     $data = array();
     $data["nombre"] = $this->session->userdata('nombre');
     $data["email"] = $this->session->userdata('priv');
-    $data["imagen"] = $array_urls[$nombre_imagen];
+    $data["imagen"] = $query->ruta;
+    $mpdf = new \Mpdf\Mpdf();
+    $html = $this->load->view('crearMPDF',$data,true);
+    $mpdf->WriteHTML($html);
+    $mpdf->Output(); // opens in browser
+    //$mpdf->Output('arjun.pdf','D'); // it downloads the file into the user system, with give name
     $this->load->view('crearMPDF',$data);
    }
    public function descargarPostales($info){
@@ -188,49 +167,17 @@ class Inicio extends CI_Controller {
     $n = array('name' => $this->session->userdata('nombre'));
     $justName= explode(" ",$n["name"]);
     $n["name"] = $justName[0];
-    print_r("Hola este es el nombre ".$nombre_imagen);
     if ($dato == 1 || $dato == 2) {
       if ($dato == 1) {
         $this->load->view('headers/headerActiveSesion',$n);
       } else $this->load->view('headers/headerAdmin');
     } else header("Location: ". base_url()."inicio"); # Si no estas logueado no puedes acceder al apartado postales
 
-      $array_urls = array(
-        "amor1" => "assets/img/postales/amor/image1.png",
-        "amor2" => "assets/img/postales/amor/image2.png",
-        "amor3" => "assets/img/postales/amor/image3.png",
-        "amor4" => "assets/img/postales/amor/image4.png",
-        "amor5" => "assets/img/postales/amor/image5.png",
-        "amor6" => "assets/img/postales/amor/image6.png",
-        "amistad1" =>"assets/img/postales/amistad/image1.png",
-        "amistad2" =>"assets/img/postales/amistad/image2.png",
-        "amistad3" =>"assets/img/postales/amistad/image3.png",
-        "amistad4" =>"assets/img/postales/amistad/image4.png",
-        "amistad5" =>"assets/img/postales/amistad/image5.png",
-        "amistad6" =>"assets/img/postales/amistad/image6.png",
-        "cumpleanos1" =>"assets/img/postales/cumpleanos/image1.png",
-        "cumpleanos2" =>"assets/img/postales/cumpleanos/image2.png",
-        "cumpleanos3" =>"assets/img/postales/cumpleanos/image3.png",
-        "cumpleanos4" =>"assets/img/postales/cumpleanos/image4.png",
-        "cumpleanos5" =>"assets/img/postales/cumpleanos/image5.png",
-        "cumpleanos6" =>"assets/img/postales/cumpleanos/image6.png",
-        "invitacion1" =>"assets/img/postales/invitacion/image1.png",
-        "invitacion2" =>"assets/img/postales/invitacion/image2.png",
-        "invitacion3" =>"assets/img/postales/invitacion/image3.png",
-        "invitacion4" =>"assets/img/postales/invitacion/image4.png",
-        "invitacion5" =>"assets/img/postales/invitacion/image5.png",
-        "invitacion6" =>"assets/img/postales/invitacion/image6.png",
-        "saludos1" =>"assets/img/postales/saludos/image1.png",
-        "saludos2" =>"assets/img/postales/saludos/image2.png",
-        "saludos3" =>"assets/img/postales/saludos/image3.png",
-        "saludos4" =>"assets/img/postales/saludos/image4.png",
-        "saludos5" =>"assets/img/postales/saludos/image5.png",
-        "saludos6" =>"assets/img/postales/saludos/image6.png",
-
-
-      );
+      $this->load->model('envios_model');
+      $query = $this->envios_model->ruta($nombre_imagen);
+      $query = $query->row(); //Traemos todos los datos de el nombre de la imagen
       $data = array();
-      $data["imagen"] = $array_urls[$nombre_imagen];
+      $data["imagen"] = $query->ruta;
       $data["nombreP"]= $n["name"];
     $this->load->view('enviarPostales',$data);
     $this->load->view('footer/footer');

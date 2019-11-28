@@ -7,7 +7,10 @@
           <h3 class="align-center">Reporte Semanal de iPostal</h3>
             <div id="chartContainer" style="height: 300px; width: 100%;"></div>
         <br><br><br><br><br><br><br>
-            <div id="chartContainer2" style="height: 300px; width: 100%;"></div>
+			<div id="chartContainer2" style="height: 300px; width: 100%;"></div>
+			<div class="row">
+				<a href="<?=base_url();?>reportePDF/graficas"><button class="col-xs-6 btn btn-primary">Generar PDF</button></a>
+			</div>
         </div>
     </section>
 </main>

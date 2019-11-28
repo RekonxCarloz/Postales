@@ -30,7 +30,7 @@
                     </table>
                 </div>
                 <div class="row">
-                    <a href="#"><button class="col-xs-6 btn btn-primary">Generar PDF</button></a>
+                    <a href="<?=base_url();?>reportePDF/usuario"><button class="col-xs-6 btn btn-primary">Generar PDF</button></a>
                 </div>
             </div>
         </section>
