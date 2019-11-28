@@ -1,24 +1,72 @@
 </div>
+
 <main class="page">
     <section class="clean-block">
         <div class="container">
         <br><br><br><br><br><br><br>
+          <h3 class="align-center">Reporte Semanal de iPostal</h3>
             <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+        <br><br><br><br><br><br><br>
+            <div id="chartContainer2" style="height: 300px; width: 100%;"></div>
         </div>
     </section>
 </main>
 
 <script>
 
+<?php
+		//categorias
+	$porcentaje = 0;
+        foreach ($categorias->result() as $key) {
+			$porcentaje += $key->rating;
+		}
+		//Porcentaje ahora tiene el numero de puntiaciones totales
+        $dataPoints = array(4);
+        for($i = 0 ; $i < 4 ; $i++) {
+
+            $dataPoints[$i] = array("label"=> $categorias->result()[$i]->nombre, "y"=> (($categorias->result()[$i]->rating)*100/$porcentaje));
+		}
+
+		//postales
+		$x = 0;
+		$dataPoints2 = array(5);
+        for($i = 0 ; $i < 5 ; $i++) {
+			$x++;
+			$dataPoints2[$i] = array("x"=> $x, "y"=> $postales->result()[$i]->rating, "indexLabel" => $postales->result()[$i]->nombre);
+            
+            
+		}
+?>
+
+
 
 window.onload = function() {
+
+var chart2 = new CanvasJS.Chart("chartContainer2", {
+	animationEnabled: true,
+	exportEnabled: true,
+	theme: "light2", // "light1", "light2", "dark1", "dark2"
+	title:{
+		text: "Postal Más Gustada"
+	},
+	data: [{
+		type: "column", //change type to bar, line, area, pie, etc
+		//indexLabel: "{y}", //Shows y value on all Data Points
+		indexLabelFontColor: "#5A5757",
+		indexLabelPlacement: "outside",
+		dataPoints: <?php echo json_encode($dataPoints2, JSON_NUMERIC_CHECK); ?>
+	}]
+});
+chart2.render();
+
+
 
 var chart = new CanvasJS.Chart("chartContainer", {
 	theme: "light2", // "light1", "light2", "dark1", "dark2"
 	exportEnabled: true,
 	animationEnabled: true,
 	title: {
-		text: "Reporte Semanal de iPostal"
+		text: "Categoría Más Gustada"
 	},
 	data: [{
 		type: "pie",
@@ -28,15 +76,7 @@ var chart = new CanvasJS.Chart("chartContainer", {
 		legendText: "{label}",
 		indexLabelFontSize: 16,
 		indexLabel: "{label} - {y}%",
-		dataPoints: [
-			{ y: 51.08, label: "Chrome" },
-			{ y: 27.34, label: "Internet Explorer" },
-			{ y: 10.62, label: "Firefox" },
-			{ y: 5.02, label: "Microsoft Edge" },
-			{ y: 4.07, label: "Safari" },
-			{ y: 1.22, label: "Opera" },
-			{ y: 0.44, label: "Others" }
-		]
+		dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
 	}]
 });
 chart.render();

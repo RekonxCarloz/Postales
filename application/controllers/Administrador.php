@@ -4,6 +4,7 @@
         function __construct() {
             parent::__construct();
             $this->load->model('crud_model');
+            $this->load->model('reportes_model');
         }
         
         public function index() {
@@ -28,8 +29,10 @@
             if ($this->session->userdata('login') == 2) {
                 $this->load->view('headers/headerAdmin');
             } else header("Location: " . base_url()); # Si no estas logueado como admin entonces regresa al index
-                
-            $this->load->view('charts');
+            
+            $data["postales"] = $this->reportes_model->postalesMasGustadas();
+            $data['categorias'] = $this->reportes_model->categoriasMasGustadas();
+            $this->load->view('charts',$data);
             $this->load->view('footer/footer');
         }
 

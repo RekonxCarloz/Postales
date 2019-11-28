@@ -8,8 +8,6 @@ class Prueba extends CI_Controller {
 
     public function index() {
         $var = $this->reportes_model->postalesMasGustadas();
-        foreach ($var->result() as $key) {
-            echo "$key->idPostal - $key->nombre - $key->rating<br>";
-        }
+        
     }
 }

@@ -79,7 +79,7 @@
                           
                             ?>
                            <a href='<?= base_url()."descargarPostales".$string;?>'>
-                           <input type="button" value="Descargar postal" class="btn btn-success" >
+                           <input type="button" value="Descargar postal" class="btn btn-success descargar" >
                            </a>  
                              </div></td>
                             </tr>
@@ -111,11 +111,12 @@
                             <td class="align-middle"><?= $fila->fecha; ?></td>
                             <td class="align-middle"><?= $fila->nombre; ?></td>
                             <td class="align-middle w-25"><img src="<?= base_url().$fila->ruta; ?>" class="img-fluid rounded"></td>
-                            <td class="align-middle"><div class="col-sm" align="center" id="btnenv">
-                           <i class="fas fa-file-pdf fa-2x"></i><br>
-                            <button id="env" class="btn btn-primary" type="submit">Descarga tu postal</button>
-                             </div></td>
-                            
+                            <td class="align-middle">
+                                <div class="col-sm" align="center" id="btnenv">
+                                    <i class="fas fa-file-pdf fa-2x"></i><br>
+                                    <button id="env" class="btn btn-primary" type="submit">Descarga tu postal</button>
+                                </div>
+                            </td>
                             </tr>
                             <?php } ?>
                         </tbody>

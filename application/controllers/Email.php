@@ -52,7 +52,8 @@ class Email extends CI_Controller{
         // Email body content
         $mailContent = '<b>FELICIDADES ESTA ES TU POSTAL</b>: <br>'.$_POST["mensaje"];
         $mailContent .= "<br><br><br><br>Datos del remitente.<br><br>Nombre: ".$this->session->userdata('nombre')."
-        <br>Email: ".$this->session->userdata('priv')."<br><br>Datos de Envio:<br><br>Enviado a: ".$_POST['correo'];
+        <br>Email: ".$this->session->userdata('priv')."<br><br>Datos de Envio:<br><br>Enviado a: ".$_POST['correo']."<br><br><br>
+        Ve tu postal en: ".base_url()."historial";
         $mail->Body = $mailContent;
         // Se hace el registro en la tabla usuariopostal a continuacion
         $query = $this->envios_model->ruta($_POST['imagenNombre']);
