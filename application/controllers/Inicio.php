@@ -126,41 +126,6 @@ class Inicio extends CI_Controller {
      $this->load->view('categoriaPostales');
      $this->load->view('footer/footer');
    }
-   public function crearPDF($nombre_imagen){
-
-    $this->load->model('envios_model');
-    $query = $this->envios_model->ruta($nombre_imagen);
-    $query = $query->row(); //Traemos todos los datos de el nombre de la imagen
-    $data = array();
-    $data["nombre"] = $this->session->userdata('nombre');
-    $data["email"] = $this->session->userdata('priv');
-    $data["imagen"] = $query->ruta;
-    $mpdf = new \Mpdf\Mpdf();
-    $html = $this->load->view('crearMPDF',$data,true);
-    $mpdf->WriteHTML($html);
-    $mpdf->Output(); // opens in browser
-    //$mpdf->Output('arjun.pdf','D'); // it downloads the file into the user system, with give name
-    $this->load->view('crearMPDF',$data);
-   }
-   public function descargarPostales($info){
-
-    $dato = $this->session->userdata('login');
-    $n = array('name' => $this->session->userdata('nombre'));
-    $justName= explode(" ",$n["name"]);
-    $n["name"] = $justName[0];
-    if ($dato == 1 || $dato == 2) {
-      if ($dato == 1) {
-        $this->load->view('headers/headerActiveSesion',$n);
-      } else $this->load->view('headers/headerAdmin');
-    } else header("Location: ". base_url()."inicio"); # Si no estas logueado no puedes acceder al apartado postales
-    echo("esta es tu info: ");
-    $data = array();
-    $data["imagen"] =$info;
-    echo($info);
-     $this->load->view('descargarPostal', $data);
-     $this->load->view('footer/footer');
-   }
-
 
    public function enviarPostales($nombre_imagen){
     $dato = $this->session->userdata('login');

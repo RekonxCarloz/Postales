@@ -49,6 +49,28 @@
                 //$mpdf->Output('arjun.pdf','D'); // it downloads the file into the user system, with give name
             } else header("Location: " . base_url()); # Si no estas logueado como admin entonces regresa al index
         }
- 
+        
+        public function postalRecibida($fecha) {
+            if ($this->session->userdata('login') == 2 || $this->session->userdata('login') == 1) {
+                $fecha = str_replace('%20',' ',$fecha);
+                $query = $this->reportes_model->obtenerPostalRecibida($fecha);
+                $query = $query->row();
+                $data = array();
+                $data['imagen'] = $this->reportes_model->obtenerRutaImagen($query->idPostal);
+                $data["nombre"] = $this->session->userdata('nombre');
+                $data["email"] = $this->session->userdata('priv');
+                $data["fecha"] = $fecha;
+                $data["emailRemitente"] = $query->email;
+                $query = $this->db->get_where('usuario',array('email' => $query->email));
+                $query = $query->row();
+                $data['nombreRemitente'] = $query->nombre;
+
+                $mpdf = new \Mpdf\Mpdf();
+                $html = $this->load->view('crearMPDF',$data,true);
+                $mpdf->WriteHTML($html);
+                $mpdf->Output(); // opens in browser*/
+                //$mpdf->Output('arjun.pdf','D'); // it downloads the file into the user system, with give name
+            } else header("Location: " . base_url()); # Si no estas logueado como admin entonces regresa al index
+        }
     }
 ?>

@@ -42,7 +42,6 @@
                             <th scope="col">Fecha y Hora</th>
                             <th scope="col">Categoría</th>
                             <th scope="col">Postal</th>
-                            <th scope="col">Acción</th>
                             </tr>
                         </thead>
                         <tbody class="text-sm-center">
@@ -54,35 +53,6 @@
                             <td class="align-middle"><?= $fila->fecha; ?></td>
                             <td class="align-middle"><?= $fila->nombre; ?></td>
                             <td class="align-middle w-25"><img src="<?= base_url().$fila->ruta; ?>" class="img-fluid rounded"></td>
-                            <td class="align-middle"><div class="col-sm" align="center" id="btnenv">
-                           <i class="fas fa-file-pdf fa-2x"></i><br>
-                           <?php 
-                            $arraynuevo=str_split($fila->ruta);
-                            $string="";
-                            $contador=0;
-                            $escribir=false;
-                            
-                            foreach($arraynuevo as $char){
-                                if($char=="/"){
-                                    $contador++;
-                                    if($contador==3)
-                                    $escribir=true;
-                                    if($contador==4)
-                                    $escribir=false;
-                                }
-                                if($escribir){
-                                    $string.=$char;
-                                }
-                                if($char==$arraynuevo[count($arraynuevo)-6])
-                                $string.=$char;
-                                
-                            }
-                          
-                            ?>
-                           <a href='<?= base_url()."descargarPostales".$string;?>'>
-                           <input type="button" value="Descargar postal" class="btn btn-success descargar" >
-                           </a>  
-                             </div></td>
                             </tr>
                             <?php } ?>
                         </tbody>
@@ -112,36 +82,12 @@
                             <td class="align-middle"><?= $fila->fecha; ?></td>
                             <td class="align-middle"><?= $fila->nombre; ?></td>
                             <td class="align-middle w-25"><img src="<?= base_url().$fila->ruta; ?>" class="img-fluid rounded"></td>
-                            <td class="align-middle"><div class="col-sm" align="center" id="btnenv">
-                            <i class="fas fa-file-pdf fa-2x"></i><br>
-                           <?php 
-                            $arraynuevo=str_split($fila->ruta);
-                            $string="";
-                            $contador=0;
-                            $escribir=false;
-                            
-                            foreach($arraynuevo as $char){
-                                if($char=="/"){
-                                    $contador++;
-                                    if($contador==3)
-                                    $escribir=true;
-                                    if($contador==4)
-                                    $escribir=false;
-                                }
-                                if($escribir){
-                                    $string.=$char;
-                                }
-                                if($char==$arraynuevo[count($arraynuevo)-6])
-                                $string.=$char;
-                                
-                            }
-                          
-                            ?>
-                           <a href='<?= base_url()."descargarPostales".$string;?>'>
-                           <input type="button" value="Descargar postal" class="btn btn-success" >
-                           </a>
-                          
-                             </div></td>
+                            <td class="align-middle">
+                                <div class="col-sm" align="center" id="btnenv">
+                                    <i class="fas fa-file-pdf fa-2x"></i><br>
+                                    <button class="btn btn-success btnGenerar">Generar PDF</button>
+                                </div>
+                            </td>
                             
                             </tr>
                             <?php } ?>
@@ -152,3 +98,25 @@
         </section>
 
     </main>
+
+    <script>
+        
+        $(document).on('click','.btnGenerar',function(){
+            fila = $(this).closest("tr");
+            fecha = fila.find('td:eq(0)').text(); //Guarda en la variable fecha el valor de 
+            window.location.href = '<?=base_url()?>ReportePDF/postalRecibida/'+fecha;
+            //la columna fecha (La segunda) y la fila en la que se clickeo el boton generar
+            /*$.ajax({
+                url: "<?=base_url()?>ReportePDF/postalRecibida",
+                type: "POST",
+                dataType: 'json',
+                data: {fecha:fecha},
+                cache: false,
+                success: function (respAX) {
+                    alert(respAX.fecha);
+                }
+            });*/
+                       
+        });
+
+    </script>

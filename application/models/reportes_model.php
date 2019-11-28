@@ -6,6 +6,21 @@
             $this->load->database();
         }
 
+        public function obtenerPostalRecibida($fecha) {
+            $query = $this->db->get_where('usuariopostal',array('fecha' => $fecha));
+            if ($query->num_rows() > 0) {
+                return $query;
+            } else return null;
+        }
+
+        public function obtenerRutaImagen($id) {
+            $query = $this->db->get_where('postal',array('idPostal' => $id));
+            if ($query->num_rows() > 0) {
+                $query = $query->row();
+                return $query->ruta;
+            } else return null;
+        }
+        
         public function obtenerNumeroPostalesEnviadas() {
             $query = $this->db->get('usuariopostal');
             return $query->num_rows();

@@ -22,21 +22,21 @@
             <div><span>PROJECT</span> Website development</div>
             <div><span>CLIENTE</span><?=$nombre?></div>
             <div><span>EMAIL</span><?=$email;?></div>
-            <div><span>FECHA</span> August 17, 2015</div>
+            <div><span>FECHA</span><?=$fecha;?></div>
           </div>
         </header>
         <main>
           <table>
             <thead>
               <tr>
-                <th class="service">Usuario</th>
-                <th class="desc">Mensaje</th>
+                <th class="service">Remitente</th>
+                <th class="desc">Nombre</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td class="service">Design</td>
-                <td class="desc">Creating a recognizable design solution based on the companys existing visual identity</td>
+                <td class="service"><?=$emailRemitente;?></td>
+                <td class="desc"><?=$nombreRemitente;?></td>
                              </tr>
             </tbody>
           </table>
