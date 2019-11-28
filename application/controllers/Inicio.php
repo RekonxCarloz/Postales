@@ -27,28 +27,6 @@ class Inicio extends CI_Controller {
     }
    }
 
-   public function reporte(){
-    $dato = $this->session->userdata('login');
-    $n = array('name' => $this->session->userdata('nombre'));
-    $justName= explode(" ",$n["name"]);
-    $n["name"] = $justName[0];
-    if ($dato == 1 || $dato == 2) {
-      if ($dato == 1) {
-        $this->load->view('headers/headerActiveSesion',$n);
-        $this->load->view('charts');
-        $this->load->view('footer/footer');
-      } else {
-        $this->load->view('headers/headerAdmin');
-        $this->load->view('charts');
-        $this->load->view('footer/footer');
-      }
-    } else {
-      $this->load->view('headers/header');
-      $this->load->view('charts');
-      $this->load->view('footer/footer');
-    }
-   }
-
    public function caracteristicas(){
     $dato = $this->session->userdata('login');
     $n = array('name' => $this->session->userdata('nombre'));

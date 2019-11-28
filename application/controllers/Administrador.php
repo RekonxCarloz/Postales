@@ -24,6 +24,16 @@
             $this->load->view('footer/footer');
         }
 
+        public function reporte(){
+            if ($this->session->userdata('login') == 2) {
+                $this->load->view('headers/headerAdmin');
+            } else header("Location: " . base_url()); # Si no estas logueado como admin entonces regresa al index
+                
+            $this->load->view('charts');
+            $this->load->view('footer/footer');
+        }
+
+
         public function crudAjax() {
             $respAX = array();
             $id = (isset($_POST['id']))?trim($_POST["id"]):'';
