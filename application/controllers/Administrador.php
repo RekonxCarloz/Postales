@@ -25,17 +25,6 @@
             $this->load->view('footer/footer');
         }
 
-        public function reporte(){
-            if ($this->session->userdata('login') == 2) {
-                $this->load->view('headers/headerAdmin');
-            } else header("Location: " . base_url()); # Si no estas logueado como admin entonces regresa al index
-            
-            $data["postales"] = $this->reportes_model->postalesMasGustadas();
-            $data['categorias'] = $this->reportes_model->categoriasMasGustadas();
-            $this->load->view('charts',$data);
-            $this->load->view('footer/footer');
-        }
-
 
         public function crudAjax() {
             $respAX = array();
