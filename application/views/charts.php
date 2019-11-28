@@ -3,12 +3,14 @@
 <main class="page">
     <section class="clean-block">
         <div class="container">
-        <br><br><br><br><br><br><br>
-          <h3 class="align-center">Reporte Semanal de iPostal</h3>
+        <div class="block-heading">
+          <br>
+            <h3 class="text-info">Reporte Semanal de iPostal</h3>
+        </div>
             <div id="chartContainer" style="height: 300px; width: 100%;"></div>
         <br><br><br><br><br><br><br>
 			<div id="chartContainer2" style="height: 300px; width: 100%;"></div>
-			<div class="row">
+			<div class="row block-heading">
 				<a href="<?=base_url();?>reportePDF/graficas"><button class="col-xs-6 btn btn-primary">Generar PDF</button></a>
 			</div>
         </div>
@@ -36,8 +38,8 @@
         for($i = 0 ; $i < 5 ; $i++) {
 			$x++;
 			$dataPoints2[$i] = array("x"=> $x, "y"=> $postales->result()[$i]->rating, "indexLabel" => $postales->result()[$i]->nombre);
-            
-            
+
+
 		}
 ?>
 

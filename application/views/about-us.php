@@ -10,9 +10,9 @@
                     <div class="col-sm-6 col-lg-4">
                         <div class="card clean-card text-center">
                             <div class="card-body info">
-                                <h4 class="card-title">Carlos Cobián</h4>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                <div class="icons"><a href="#"><i class="icon-social-facebook"></i></a><a href="#"><i class="icon-social-instagram"></i></a><a href="#"><i class="icon-social-twitter"></i></a></div>
+                                <h4 class="card-title">Carlos Cobi&aacute;n</h4>
+                                <p class="card-text">Estudiante de Ingenier&iacute;a en Sistemas Computacionales.</p>
+                                <div class="icons"><a href="https://www.facebook.com/Rekoncarloz"><i class="icon-social-facebook"></i></a></div>
                             </div>
                         </div>
                     </div>
@@ -20,8 +20,8 @@
                         <div class="card clean-card text-center">
                             <div class="card-body info">
                                 <h4 class="card-title">Omar Cruz</h4>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                <div class="icons"><a href="#"><i class="icon-social-facebook"></i></a><a href="#"><i class="icon-social-instagram"></i></a><a href="#"><i class="icon-social-twitter"></i></a></div>
+                                <p class="card-text">Estudiante de Ingenier&iacute;a en Sistemas Computacionales.</p>
+                                <div class="icons"><a href="https://www.facebook.com/omar.cruz.75286"><i class="icon-social-facebook"></i></a></div>
                             </div>
                         </div>
                     </div>
@@ -29,8 +29,8 @@
                         <div class="card clean-card text-center">
                             <div class="card-body info">
                                 <h4 class="card-title">Rodrigo Garc&iacute;a</h4>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                <div class="icons"><a href="#"><i class="icon-social-facebook"></i></a><a href="#"><i class="icon-social-instagram"></i></a><a href="#"><i class="icon-social-twitter"></i></a></div>
+                                <p class="card-text">Estudiante de Ingenier&iacute;a en Sistemas Computacionales.</p>
+                                <div class="icons"><a href="https://www.facebook.com/rodrigo.real.372"><i class="icon-social-facebook"></i></a></div>
                             </div>
                         </div>
                     </div>

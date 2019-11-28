@@ -9,6 +9,7 @@
 </style>
 <main class="page">
     <section class="clean-block">
+      <br><br><br><br><br>
         <div class="container">
             <div class="block-heading">
                 <h3 class="text-info text-center">Opciones de administrador</h3>
@@ -21,5 +22,6 @@
                 </div>
             </div>
         </div>
+        <br><br><br><br><br>
     </section>
 </main>

@@ -51,7 +51,6 @@
                     <li class="nav-item" role="presentation"><a class="nav-link" href="<?=base_url() ?>inicio">Inicio</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="<?= base_url() ?>caracteristicas">Características</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="<?= base_url() ?>about">Acerca de</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="<?= base_url() ?>contacto">Contáctanos</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="<?=base_url() ?>login">Login</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="<?= base_url() ?>registro">Registrarme</a></li>
                 </ul>
