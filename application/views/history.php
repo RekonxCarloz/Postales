@@ -1,3 +1,4 @@
+
 </div>
 <main class="page">
     <section class="clean-block features">
@@ -111,12 +112,37 @@
                             <td class="align-middle"><?= $fila->fecha; ?></td>
                             <td class="align-middle"><?= $fila->nombre; ?></td>
                             <td class="align-middle w-25"><img src="<?= base_url().$fila->ruta; ?>" class="img-fluid rounded"></td>
-                            <td class="align-middle">
-                                <div class="col-sm" align="center" id="btnenv">
-                                    <i class="fas fa-file-pdf fa-2x"></i><br>
-                                    <button id="env" class="btn btn-primary" type="submit">Descarga tu postal</button>
-                                </div>
-                            </td>
+                            <td class="align-middle"><div class="col-sm" align="center" id="btnenv">
+                            <i class="fas fa-file-pdf fa-2x"></i><br>
+                           <?php 
+                            $arraynuevo=str_split($fila->ruta);
+                            $string="";
+                            $contador=0;
+                            $escribir=false;
+                            
+                            foreach($arraynuevo as $char){
+                                if($char=="/"){
+                                    $contador++;
+                                    if($contador==3)
+                                    $escribir=true;
+                                    if($contador==4)
+                                    $escribir=false;
+                                }
+                                if($escribir){
+                                    $string.=$char;
+                                }
+                                if($char==$arraynuevo[count($arraynuevo)-6])
+                                $string.=$char;
+                                
+                            }
+                          
+                            ?>
+                           <a href='<?= base_url()."descargarPostales".$string;?>'>
+                           <input type="button" value="Descargar postal" class="btn btn-success" >
+                           </a>
+                          
+                             </div></td>
+                            
                             </tr>
                             <?php } ?>
                         </tbody>
